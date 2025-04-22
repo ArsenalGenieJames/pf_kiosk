@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jollibee Menu Ordering Kiosk</title>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Jollibee</span>
+      </a>
+      <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700" aria-controls="navbar-sticky" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+        </button>
+      </div>
+      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+        <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900">
+          <li><a href="#" onclick="showSection('menu')" class="block py-2 px-3 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Menu</a></li>
+          <li><a href="#" onclick="showSection('orders')" class="block py-2 px-3 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Orders</a></li>
+          <li><a href="#" onclick="showSection('summary')" class="block py-2 px-3 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Summary</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content Section -->
+  <div id="content" class="p-4 mt-20">
+    <!-- Menu Section -->
+    <div id="menu">
+      <h2 class="text-2xl font-bold mb-6">Menu</h2>
+      
+      <!-- Drinks Category -->
+      <h3 class="text-xl font-semibold mb-4">Drinks</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md p-4 dark:bg-gray-800 dark:border-gray-700">
+          <img class="h-auto max-w-full rounded-lg" src="https://cdn.okya.co/e2ab61c4-663b-4059-af90-e8572f44b9ea~1/nth/0/-/resize/x1184/-/format/auto/" alt="Chicken Joy" />
+          <div class="px-4 pb-4">
+            <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Soft Drink</h5>
+            <div class="flex items-center justify-between mt-4">
+              <span class="text-xl font-bold text-gray-900 dark:text-white">₱50</span>
+              <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600" onclick="addToOrder('Soft Drink', 50)">Buy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desserts Category -->
+      <h3 class="text-xl font-semibold mb-4">Desserts</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md p-4 dark:bg-gray-800 dark:border-gray-700">
+          <img class="h-auto max-w-full rounded-lg" src="https://example.com/dessert.jpg" alt="Dessert" />
+          <div class="px-4 pb-4">
+            <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Chocolate Cake</h5>
+            <div class="flex items-center justify-between mt-4">
+              <span class="text-xl font-bold text-gray-900 dark:text-white">₱120</span>
+              <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600" onclick="addToOrder('Chocolate Cake', 120)">Buy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Meals Category -->
+      <h3 class="text-xl font-semibold mb-4">Meals</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md p-4 dark:bg-gray-800 dark:border-gray-700">
+          <img class="h-auto max-w-full rounded-lg" src="https://example.com/chicken_joy.jpg" alt="Chicken Joy" />
+          <div class="px-4 pb-4">
+            <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Chicken Joy</h5>
+            <div class="flex items-center justify-between mt-4">
+              <span class="text-xl font-bold text-gray-900 dark:text-white">₱100</span>
+              <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600" onclick="addToOrder('Chicken Joy', 100)">Buy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Orders Section -->
+    <div id="orders" class="hidden bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
+      <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
+        <div class="mx-auto max-w-5xl">
+          <div class="gap-4 sm:flex sm:items-center sm:justify-between">
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">My Orders</h2>
+          </div>
+          <div class="mt-6 flow-root sm:mt-8">
+            <div id="orderList" class="divide-y divide-gray-200 dark:divide-gray-700">
+              <!-- Orders will be dynamically added here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary Section -->
+    <div id="summary" class="hidden flex items-center justify-center min-h-screen">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full">
+        <h2 class="text-xl font-bold mb-4 text-center text-gray-900 dark:text-white">Summary</h2>
+        <ul id="summaryList" class="list-disc pl-5 text-gray-900 dark:text-white"></ul>
+        <p class="mt-4 font-bold text-gray-800 dark:text-white text-center">Total: ₱<span id="totalPrice">0</span></p>
+        <button class="bg-green-500 text-white px-4 py-2 rounded mt-4 w-full" onclick="proceedToPayment()">Proceed to Payment</button>
+      </div>
+    </div>
+
+    <!-- Payment Section -->
+    <div id="payment" class="hidden flex items-center justify-center min-h-screen">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full">
+        <h2 class="text-xl font-bold mb-4 text-center text-gray-900 dark:text-white">Payment</h2>
+        <p class="text-gray-900 dark:text-white mb-4">Select a payment method:</p>
+        <div class="space-y-3">
+          <button class="bg-blue-500 text-white px-4 py-2 rounded w-full" onclick="completePayment('GCash')">GCash</button>
+          <button class="bg-green-500 text-white px-4 py-2 rounded w-full" onclick="completePayment('Bank')">Bank</button>
+          <button class="bg-gray-500 text-white px-4 py-2 rounded w-full" onclick="completePayment('Cash')">Cash</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Receipt Section -->
+    <div id="receipt" class="hidden flex items-center justify-center min-h-screen">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full">
+        <h2 class="text-xl font-bold mb-4 text-center text-gray-900 dark:text-white">Receipt</h2>
+        <ul id="receiptList" class="list-disc pl-5 text-gray-900 dark:text-white"></ul>
+        <p class="mt-4 font-bold text-gray-800 dark:text-white text-center">Total Paid: ₱<span id="receiptTotal">0</span></p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4 w-full" onclick="restartOrder()">New Order</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    let orders = [];
+
+    function addToOrder(item, price) {
+      orders.push({ item, price });
+      updateSummary();
+      updateOrdersList();
+      alert(`${item} added to order!`);
+    }
+
+    function updateSummary() {
+      const list = document.getElementById("summaryList");
+      list.innerHTML = "";
+      let total = 0;
+      orders.forEach(order => {
+        total += order.price;
+        const li = document.createElement("li");
+        li.textContent = `${order.item} - ₱${order.price}`;
+        list.appendChild(li);
+      });
+      document.getElementById("totalPrice").textContent = total;
+    }
+
+    function updateOrdersList() {
+      const list = document.getElementById("orderList");
+      list.innerHTML = "";
+      orders.forEach((order, index) => {
+        const div = document.createElement("div");
+        div.className = "py-4 flex items-center justify-between";
+
+        const orderInfo = document.createElement("span");
+        orderInfo.textContent = `${order.item} - ₱${order.price}`;
+        orderInfo.className = "text-gray-900 dark:text-white";
+
+        const buttonsDiv = document.createElement("div");
+        buttonsDiv.className = "flex space-x-2";
+
+        const orderAgainButton = document.createElement("button");
+        orderAgainButton.textContent = "Order Again";
+        orderAgainButton.className = "bg-blue-500 text-white px-3 py-1 rounded";
+        orderAgainButton.onclick = () => addToOrder(order.item, order.price);
+
+        const cancelButton = document.createElement("button");
+        cancelButton.textContent = "Cancel Order";
+        cancelButton.className = "bg-red-500 text-white px-3 py-1 rounded";
+        cancelButton.onclick = () => {
+          orders.splice(index, 1);
+          updateSummary();
+          updateOrdersList();
+        };
+
+        buttonsDiv.appendChild(orderAgainButton);
+        buttonsDiv.appendChild(cancelButton);
+        div.appendChild(orderInfo);
+        div.appendChild(buttonsDiv);
+        list.appendChild(div);
+      });
+    }
+
+    function showSection(id) {
+      const sections = ["menu", "orders", "summary", "payment", "receipt"];
+      sections.forEach(section => {
+        document.getElementById(section).classList.add("hidden");
+      });
+      document.getElementById(id).classList.remove("hidden");
+    }
+
+    function proceedToPayment() {
+      showSection("payment");
+    }
+
+    function completePayment(method) {
+      alert(`Payment completed using ${method}.`);
+      generateReceipt();
+      showSection("receipt");
+    }
+
+    function generateReceipt() {
+      const receiptList = document.getElementById("receiptList");
+      receiptList.innerHTML = "";
+      orders.forEach(order => {
+        const li = document.createElement("li");
+        li.textContent = `${order.item} - ₱${order.price}`;
+        receiptList.appendChild(li);
+      });
+      document.getElementById("receiptTotal").textContent = document.getElementById("totalPrice").textContent;
+    }
+
+    function restartOrder() {
+      orders = [];
+      updateSummary();
+      updateOrdersList();
+      showSection('menu');
+    }
+  </script>
+
+</body>
+</html>
