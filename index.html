@@ -2,206 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jollibee Menu Ordering Kiosk</title>
-  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <title>Jollibee</title>
 </head>
-<body class="bg-gray-100">
+<body>
 
   <!-- Navbar -->
-  <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Jollibee</span>
-      </a>
-      <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700" aria-controls="navbar-sticky" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-        </button>
-      </div>
-      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-        <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900">
-          <li><a href="#" onclick="showSection('menu')" class="block py-2 px-3 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Menu</a></li>
-          <li><a href="#" onclick="showSection('orders')" class="block py-2 px-3 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Orders</a></li>
-          <li><a href="#" onclick="showSection('summary')" class="block py-2 px-3 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Summary</a></li>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-md">
+      <a class="navbar-brand" href="#">Jollibee</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('menu')">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('orders')">Orders</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('summary')">Summary</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Content Section -->
-  <div id="content" class="p-4 mt-20">
+  <div id="content" class="p-4">
     <!-- Menu Section -->
     <div id="menu">
-      <h2 class="text-2xl font-bold mb-6">Menu</h2>
-      
-      <!-- Drinks Category -->
-      <h3 class="text-xl font-semibold mb-4">Drinks</h3>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 p-10">
-      <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md p-4 dark:bg-gray-800 dark:border-gray-700">
-        <img class="w-full h-auto rounded-lg" src="./img/drinks/soffdrinks1.jpg" alt="Soft Drink" />
-        <div class="px-4 pb-4">
-          <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Soft Drink</h5>
-          <p class="text-sm text-gray-700 dark:text-gray-400">A refreshing carbonated beverage to quench your thirst.</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">₱50</span>
-            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600" onclick="addToOrder('Soft Drink', 50)">Buy</button>
-          </div>
+      <div class="container">
+        <div class="row text-center mb-4">
+          <div class="col"><a href="#" onclick="showCategory('drinks')" class="btn btn-outline-primary w-100">Drinks</a></div>
+          <div class="col"><a href="#" onclick="showCategory('dessert')" class="btn btn-outline-primary w-100">Dessert</a></div>
+          <div class="col"><a href="#" onclick="showCategory('meals')" class="btn btn-outline-primary w-100">Meals</a></div>
         </div>
-      </div>
 
-      <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md p-4 dark:bg-gray-800 dark:border-gray-700">
-        <img class="w-full h-auto rounded-lg" src="./img/drinks/Pineapple-Juice-Regular.webp" alt="Pineapple Juice Regular" />
-        <div class="px-4 pb-4">
-          <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Pineapple Juice Regular</h5>
-          <p class="text-sm text-gray-700 dark:text-gray-400">A tropical pineapple juice with a sweet and tangy flavor.</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">₱50</span>
-            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600" onclick="addToOrder('Pineapple Juice Regular', 50)">Buy</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md p-4 dark:bg-gray-800 dark:border-gray-700">
-        <img class="w-full h-auto rounded-lg" src="./img/drinks/c68bdabb3eb14ffca98e148c43b54bf2.webp" alt="Lychee Iced Tea with Donut" />
-        <div class="px-4 pb-4">
-          <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Lychee Iced Tea with Donut</h5>
-          <p class="text-sm text-gray-700 dark:text-gray-400">A delightful combo of lychee-flavored iced tea and a soft donut.</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">₱50</span>
-            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600" onclick="addToOrder('Lychee Iced Tea with Donut', 50)">Buy</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md p-4 dark:bg-gray-800 dark:border-gray-700">
-        <img class="w-full h-auto rounded-lg" src="./img/drinks/9e20a632dfab45d9be214ab150467f1e.webp" alt="Soft Drink" />
-        <div class="px-4 pb-4">
-          <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Soft Drink</h5>
-          <p class="text-sm text-gray-700 dark:text-gray-400">A classic fizzy drink to complement your meal.</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">₱50</span>
-            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600" onclick="addToOrder('Soft Drink', 50)">Buy</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md p-4 dark:bg-gray-800 dark:border-gray-700">
-        <img class="w-full h-auto rounded-lg" src="./img/drinks/soffdrinks1.jpg" alt="Pineapple Juice Regular" />
-        <div class="px-4 pb-4">
-          <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Pineapple Juice Regular</h5>
-          <p class="text-sm text-gray-700 dark:text-gray-400">A refreshing drink made from ripe pineapples.</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">₱50</span>
-            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600" onclick="addToOrder('Pineapple Juice Regular', 50)">Buy</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md p-4 dark:bg-gray-800 dark:border-gray-700">
-        <img class="w-full h-auto rounded-lg" src="./img/drinks/softdrinksbrand.avif" alt="Lychee Iced Tea with Donut" />
-        <div class="px-4 pb-4">
-          <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Lychee Iced Tea with Donut</h5>
-          <p class="text-sm text-gray-700 dark:text-gray-400">A refreshing iced tea with lychee flavor paired with a donut.</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">₱50</span>
-            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600" onclick="addToOrder('Lychee Iced Tea with Donut', 50)">Buy</button>
-          </div>
-        </div>
-      </div>
-
-      </div>
-
-      <!-- Desserts Category -->
-      <h3 class="text-xl font-semibold mb-4">Desserts</h3>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-
-
-        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md p-4 dark:bg-gray-800 dark:border-gray-700">
-          <img class="h-auto max-w-full rounded-lg" src="https://example.com/dessert.jpg" alt="Dessert" />
-          <div class="px-4 pb-4">
-            <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Chocolate Cake</h5>
-            <div class="flex items-center justify-between mt-4">
-              <span class="text-xl font-bold text-gray-900 dark:text-white">₱120</span>
-              <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600" onclick="addToOrder('Chocolate Cake', 120)">Buy</button>
+        <!-- Drinks -->
+        <div id="drinks" class="d-none">
+          <h3 class="text-center mb-4">Drinks</h3>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <img src="drink1.jpg" class="card-img-top" alt="Drink 1" />
+                <div class="card-body">
+                  <h5 class="card-title">Drink 1</h5>
+                  <p class="card-text">₱50</p>
+                  <button class="btn btn-primary w-100" onclick="addToOrder('Drink 1', 50)">Add to Order</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="drink2.jpg" class="card-img-top" alt="Drink 2" />
+                <div class="card-body">
+                  <h5 class="card-title">Drink 2</h5>
+                  <p class="card-text">₱60</p>
+                  <button class="btn btn-primary w-100" onclick="addToOrder('Drink 2', 60)">Add to Order</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md p-4 dark:bg-gray-800 dark:border-gray-700">
-          <img class="h-auto max-w-full rounded-lg" src="https://example.com/dessert.jpg" alt="Dessert" />
-          <div class="px-4 pb-4">
-            <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Chocolate Cake</h5>
-            <div class="flex items-center justify-between mt-4">
-              <span class="text-xl font-bold text-gray-900 dark:text-white">₱120</span>
-              <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600" onclick="addToOrder('Chocolate Cake', 120)">Buy</button>
+        <!-- Dessert -->
+        <div id="dessert" class="d-none">
+          <h3 class="text-center mb-4">Dessert</h3>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <img src="dessert1.jpg" class="card-img-top" alt="Dessert 1" />
+                <div class="card-body">
+                  <h5 class="card-title">Dessert 1</h5>
+                  <p class="card-text">₱70</p>
+                  <button class="btn btn-primary w-100" onclick="addToOrder('Dessert 1', 70)">Add to Order</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="dessert2.jpg" class="card-img-top" alt="Dessert 2" />
+                <div class="card-body">
+                  <h5 class="card-title">Dessert 2</h5>
+                  <p class="card-text">₱80</p>
+                  <button class="btn btn-primary w-100" onclick="addToOrder('Dessert 2', 80)">Add to Order</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md p-4 dark:bg-gray-800 dark:border-gray-700">
-          <img class="h-auto max-w-full rounded-lg" src="https://example.com/dessert.jpg" alt="Dessert" />
-          <div class="px-4 pb-4">
-            <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Chocolate Cake</h5>
-            <div class="flex items-center justify-between mt-4">
-              <span class="text-xl font-bold text-gray-900 dark:text-white">₱120</span>
-              <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600" onclick="addToOrder('Chocolate Cake', 120)">Buy</button>
+        <!-- Meals -->
+        <div id="meals" class="d-none">
+          <h3 class="text-center mb-4">Meals</h3>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <img src="meal1.jpg" class="card-img-top" alt="Meal 1" />
+                <div class="card-body">
+                  <h5 class="card-title">Meal 1</h5>
+                  <p class="card-text">₱120</p>
+                  <button class="btn btn-primary w-100" onclick="addToOrder('Meal 1', 120)">Add to Order</button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-
-        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md p-4 dark:bg-gray-800 dark:border-gray-700">
-          <img class="h-auto max-w-full rounded-lg" src="https://example.com/dessert.jpg" alt="Dessert" />
-          <div class="px-4 pb-4">
-            <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Chocolate Cake</h5>
-            <div class="flex items-center justify-between mt-4">
-              <span class="text-xl font-bold text-gray-900 dark:text-white">₱120</span>
-              <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600" onclick="addToOrder('Chocolate Cake', 120)">Buy</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md p-4 dark:bg-gray-800 dark:border-gray-700">
-          <img class="h-auto max-w-full rounded-lg" src="https://example.com/dessert.jpg" alt="Dessert" />
-          <div class="px-4 pb-4">
-            <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Chocolate Cake</h5>
-            <div class="flex items-center justify-between mt-4">
-              <span class="text-xl font-bold text-gray-900 dark:text-white">₱120</span>
-              <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600" onclick="addToOrder('Chocolate Cake', 120)">Buy</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md p-4 dark:bg-gray-800 dark:border-gray-700">
-          <img class="h-auto max-w-full rounded-lg" src="https://example.com/dessert.jpg" alt="Dessert" />
-          <div class="px-4 pb-4">
-            <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Chocolate Cake</h5>
-            <div class="flex items-center justify-between mt-4">
-              <span class="text-xl font-bold text-gray-900 dark:text-white">₱120</span>
-              <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600" onclick="addToOrder('Chocolate Cake', 120)">Buy</button>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-
-      <!-- Meals Category -->
-      <h3 class="text-xl font-semibold mb-4">Meals</h3>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md p-4 dark:bg-gray-800 dark:border-gray-700">
-          <img class="h-auto max-w-full rounded-lg" src="https://example.com/chicken_joy.jpg" alt="Chicken Joy" />
-          <div class="px-4 pb-4">
-            <h5 class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Chicken Joy</h5>
-            <div class="flex items-center justify-between mt-4">
-              <span class="text-xl font-bold text-gray-900 dark:text-white">₱100</span>
-              <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600" onclick="addToOrder('Chicken Joy', 100)">Buy</button>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="meal2.jpg" class="card-img-top" alt="Meal 2" />
+                <div class="card-body">
+                  <h5 class="card-title">Meal 2</h5>
+                  <p class="card-text">₱150</p>
+                  <button class="btn btn-primary w-100" onclick="addToOrder('Meal 2', 150)">Add to Order</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -209,57 +119,179 @@
     </div>
 
     <!-- Orders Section -->
-    <div id="orders" class="hidden bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
-      <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
-        <div class="mx-auto max-w-5xl">
-          <div class="gap-4 sm:flex sm:items-center sm:justify-between">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">My Orders</h2>
+    <div id="orders" class="d-none">
+      <h3 class="text-center m-4">Your Orders</h3>
+      <div class="container mb-3">
+        <div class="row">
+          <div class="col">
+            <b>Item</b>
           </div>
-          <div class="mt-6 flow-root sm:mt-8">
-            <div id="orderList" class="divide-y divide-gray-200 dark:divide-gray-700">
-              <!-- Orders will be dynamically added here -->
-            </div>
+          <div class="col">
+            <b>Price</b>
           </div>
         </div>
       </div>
+      <ul id="ordersList" class="list-group mb-3"></ul>
     </div>
 
     <!-- Summary Section -->
-    <div id="summary" class="hidden flex items-center justify-center min-h-screen">
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full">
-        <h2 class="text-xl font-bold mb-4 text-center text-gray-900 dark:text-white">Summary</h2>
-        <ul id="summaryList" class="list-disc pl-5 text-gray-900 dark:text-white"></ul>
-        <p class="mt-4 font-bold text-gray-800 dark:text-white text-center">Total: ₱<span id="totalPrice">0</span></p>
-        <button class="bg-green-500 text-white px-4 py-2 rounded mt-4 w-full" onclick="proceedToPayment()">Proceed to Payment</button>
-      </div>
+    <div id="summary" class="d-none">
+      <h3 class="text-center mb-4">Summary</h3>
+      <ul id="summaryList" class="list-group mb-3"></ul>
+      <p class="text-center fw-bold">Total: ₱<span id="totalPrice">0</span></p>
+      <button class="btn btn-success w-100" onclick="proceedToPayment()">Proceed to Payment</button>
     </div>
 
     <!-- Payment Section -->
-    <div id="payment" class="hidden flex items-center justify-center min-h-screen">
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full">
-        <h2 class="text-xl font-bold mb-4 text-center text-gray-900 dark:text-white">Payment</h2>
-        <p class="text-gray-900 dark:text-white mb-4">Select a payment method:</p>
-        <div class="space-y-3">
-          <button class="bg-blue-500 text-white px-4 py-2 rounded w-full" onclick="completePayment('GCash')">GCash</button>
-          <button class="bg-green-500 text-white px-4 py-2 rounded w-full" onclick="completePayment('Bank')">Bank</button>
-          <button class="bg-gray-500 text-white px-4 py-2 rounded w-full" onclick="completePayment('Cash')">Cash</button>
-        </div>
+    <div id="payment" class="d-none mt-4">
+      <h3 class="text-center mb-4">Payment</h3>
+      <p class="text-center">Choose a payment method:</p>
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary" onclick="completePayment('GCash')">GCash</button>
+        <button class="btn btn-success" onclick="completePayment('Bank')">Bank</button>
+        <button class="btn btn-secondary" onclick="completePayment('Cash')">Cash</button>
       </div>
     </div>
 
     <!-- Receipt Section -->
-    <div id="receipt" class="hidden flex items-center justify-center min-h-screen">
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full">
-        <h2 class="text-xl font-bold mb-4 text-center text-gray-900 dark:text-white">Receipt</h2>
-        <ul id="receiptList" class="list-disc pl-5 text-gray-900 dark:text-white"></ul>
-        <p class="mt-4 font-bold text-gray-800 dark:text-white text-center">Total Paid: ₱<span id="receiptTotal">0</span></p>
-        <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4 w-full" onclick="restartOrder()">New Order</button>
+    <div id="receipt" class="d-none mt-4 border p-3 rounded shadow-sm">
+      <h3 class="text-center mb-3">Order Receipt</h3>
+      <p><strong>Date:</strong> <span id="receiptDate"></span></p>
+      <p><strong>Order Number:</strong> <span id="orderNumber"></span></p>
+      <table class="table table-bordered">
+        <thead class="table-light">
+          <tr>
+            <th>Item</th>
+            <th class="text-end">Price</th>
+          </tr>
+        </thead>
+        <tbody id="receiptList"></tbody>
+        <tfoot>
+          <tr class="fw-bold">
+            <td class="text-end">Total</td>
+            <td class="text-end">₱<span id="receiptTotal">0</span></td>
+          </tr>
+        </tfoot>
+      </table>
+      <div class="text-center mt-3">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle float-start" type="button" id="paymentDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Select Payment Method
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="paymentDropdown">
+            <li><a class="dropdown-item" href="#" onclick="completePayment('GCash')">GCash</a></li>
+            <li><a class="dropdown-item" href="#" onclick="completePayment('Bank')">Bank</a></li>
+            <li><a class="dropdown-item" href="#" onclick="completePayment('Cash')">Cash</a></li>
+          </ul>
+        </div>
       </div>
+      <button class="btn btn-secondary w-100" onclick="printReceipt()">Print Receipt</button>
+      <button class="btn btn-primary w-100 mt-2" onclick="restartOrder()">New Order</button>
     </div>
   </div>
 
+  <script>
+    let order = [];
 
- <script src="script.js"></script>
+    function showSection(sectionId) {
+      const sections = ['menu', 'orders', 'summary', 'payment', 'receipt'];
+      sections.forEach(id => {
+      document.getElementById(id).classList.add('d-none');
+      });
+      document.getElementById(sectionId).classList.remove('d-none');
 
+      if (sectionId === 'orders') updateOrders();
+      if (sectionId === 'summary') updateSummary();
+    }
+
+    function showCategory(categoryId) {
+      ['drinks', 'dessert', 'meals'].forEach(id => {
+      document.getElementById(id).classList.add('d-none');
+      });
+      document.getElementById(categoryId).classList.remove('d-none');
+    }
+
+    function addToOrder(name, price, image) {
+      order.push({ name, price, image });
+      updateOrders();
+    }
+
+    function updateOrders() {
+      const ordersList = document.getElementById('ordersList');
+      ordersList.innerHTML = '';
+
+      order.forEach(item => {
+      const li = document.createElement('li');
+      li.className = 'list-group-item';
+
+      const rowDiv = document.createElement('div');
+      rowDiv.className = 'row align-items-center';
+
+      const itemDiv = document.createElement('div');
+      itemDiv.className = 'col';
+      itemDiv.textContent = item.name;
+
+      const priceDiv = document.createElement('div');
+      priceDiv.className = 'col text-end';
+      priceDiv.textContent = `₱${item.price}`;
+
+      rowDiv.appendChild(itemDiv);
+      rowDiv.appendChild(priceDiv);
+      li.appendChild(rowDiv);
+
+      ordersList.appendChild(li);
+      });
+    }
+
+    function updateSummary() {
+      const summaryList = document.getElementById('summaryList');
+      summaryList.innerHTML = '';
+      let total = 0;
+
+      order.forEach(item => {
+      const li = document.createElement('li');
+      li.className = 'list-group-item';
+
+      const rowDiv = document.createElement('div');
+      rowDiv.className = 'row align-items-center';
+
+      const itemDiv = document.createElement('div');
+      itemDiv.className = 'col';
+      itemDiv.textContent = item.name;
+
+      const priceDiv = document.createElement('div');
+      priceDiv.className = 'col text-end';
+      priceDiv.textContent = `₱${item.price}`;
+
+      rowDiv.appendChild(itemDiv);
+      rowDiv.appendChild(priceDiv);
+      li.appendChild(rowDiv);
+
+      summaryList.appendChild(li);
+      total += item.price;
+      });
+
+      document.getElementById('totalPrice').textContent = total;
+    }
+
+    function proceedToPayment() {
+      showSection('payment');
+    }
+
+    function completePayment(method) {
+      alert(`Payment completed with ${method}`);
+      showSection('receipt');
+    }
+
+    function printReceipt() {
+      window.print();
+    }
+
+    function restartOrder() {
+      order = [];
+      showSection('menu');
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
