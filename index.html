@@ -7,17 +7,18 @@
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="icon" href="./img/logo/serbesalogo.png">
+    <link rel="stylesheet" href="style.css">
     <title>Serbesa</title>
   </head>
   <body>
     
     
 
-  <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+  <nav class="border-gray-200 bg-gray-50 dark:border-gray-700">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="./img/logo/serbesalogo.png" class="w-10 h-10 bg-white" alt="Flowbite Logo" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Serbesa</span>
+            <span class="self-center text-2xl font-semibold whitespace-nowrap text-white dark:text-white">Serbesa</span>
       </a>
       <button data-collapse-toggle="navbar-solid-bg" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-solid-bg" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
@@ -28,13 +29,13 @@
       <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
         <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
           <li>
-            <div onclick="handleClick('Menu')" class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent cursor-pointer" aria-current="page">Menu</div>
+        <div onclick="handleClick('Menu')" class="block py-2 px-3 md:p-0 text-white rounded-sm md:bg-transparent md:text-white md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent cursor-pointer hover:underline" aria-current="page">Menu</div>
           </li>
           <li>
-            <div onclick="handleClick('Orders')" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent cursor-pointer">Orders</div>
+        <div onclick="handleClick('Orders')" class="block py-2 px-3 md:p-0 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-white dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent cursor-pointer hover:underline">Orders</div>
           </li>
           <li>
-            <div onclick="handleClick('Summary')" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent cursor-pointer">Summary</div>
+        <div onclick="handleClick('Summary')" class="block py-2 px-3 md:p-0 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-white dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent cursor-pointer hover:underline">Summary</div>
           </li>
         </ul>
       </div>
@@ -43,10 +44,10 @@
 
 
       <div class="flex justify-center space-x-4 rtl:space-x-reverse mt-5">
-        <div onclick="handleClick('All')" class="cursor-pointer hover:text-blue-500">All</div>
-        <div onclick="handleClick('Drinks')" class="cursor-pointer hover:text-blue-500">Drinks</div>
-        <div onclick="handleClick('Meals')" class="cursor-pointer hover:text-blue-500">Pulotan</div>
-        <div onclick="handleClick('Dessert')" class="cursor-pointer hover:text-blue-500">Dessert</div>
+        <div onclick="handleClick('All')" class="cursor-pointer hover:text-blue-500 hover:underline">All</div>
+        <div onclick="handleClick('Drinks')" class="cursor-pointer hover:text-blue-500 hover:underline">Drinks</div>
+        <div onclick="handleClick('Meals')" class="cursor-pointer hover:text-blue-500 hover:underline">Pulotan</div>
+        <div onclick="handleClick('Dessert')" class="cursor-pointer hover:text-blue-500 hover:underline">Dessert</div>
       </div>
 
 
@@ -276,10 +277,10 @@
 
     
 
-<footer class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow-sm md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
-  <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="https://www.facebook.com/serbesailigan" class="hover:underline">Serbesa Bar and Grill </a>. All Rights Reserved.
+<footer class="fixed bottom-0 left-0 z-20 w-full p-4 border-t border-gray-200 shadow-sm md:flex md:items-center md:justify-between md:p-6 dark:border-gray-600">
+  <span class="text-sm text-white sm:text-center dark:text-gray-400">© 2025 <a href="https://www.facebook.com/serbesailigan" class="hover:underline">Serbesa Bar and Grill </a>. All Rights Reserved.
   </span>
-  <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+  <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-white dark:text-gray-400 sm:mt-0">
       <li>
           <a href="#" class="hover:underline me-4 md:me-6">About</a>
       </li>
