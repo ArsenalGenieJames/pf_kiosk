@@ -287,9 +287,9 @@
       <div id="ordersSection" class="hidden flex justify-center mt-5 m-10 mb-20">
         <div class="w-full max-w-4xl bg-white rounded-lg shadow-md p-6">
         <h2 class="text-2xl font-semibold mb-4 text-center">Customers Orders</h2>
-          <div id="ordersList" class="space-y-4">
+            <div id="ordersList" class="space-y-4 max-h-64 overflow-y-auto">
             <!-- automatic mo butang diri ang ngipag add to orders -->
-          </div>
+            </div>
 
           <div class="mt-6">
             <label for="customerMoney" class="block text-lg font-semibold mb-2">Enter Customer Money:</label>
@@ -420,21 +420,98 @@
   function renderOrders() {
     const ordersList = document.getElementById('ordersList');
     ordersList.innerHTML = ''; // Clear the current list
+    const orderSummary = {};
+
+    // Summarize orders by product name
+    orders.forEach(order => {
+      if (orderSummary[order.name]) {
+        orderSummary[order.name].quantity++;
+      } else {
+        orderSummary[order.name] = { price: order.price, quantity: 1 };
+      }
+    });
+
     let total = 0;
 
-    orders.forEach((order, index) => {
+    // Render summarized orders
+    Object.keys(orderSummary).forEach((productName) => {
+      const { price, quantity } = orderSummary[productName];
       const orderItem = document.createElement('div');
       orderItem.className = 'flex justify-between items-center border-b pb-2 mb-2';
       orderItem.innerHTML = `
-        <span>${order.name}</span>
-        <span>₱${order.price.toFixed(2)}</span>
-        <button onclick="removeOrder(${index})" class="text-red-500 hover:underline">Remove</button>
+        <span>${productName} (x${quantity})</span>
+        <span>₱${(price * quantity).toFixed(2)}</span>
+        <div class="flex items-center space-x-2">
+          <button onclick="decreaseOrderQuantity('${productName}')" class="bg-gray-200 px-2 py-1 rounded-lg">-</button>
+          <button onclick="increaseOrderQuantity('${productName}')" class="bg-gray-200 px-2 py-1 rounded-lg">+</button>
+          <button onclick="removeOrder('${productName}')" class="text-red-500 hover:underline">Remove</button>
+        </div>
       `;
       ordersList.appendChild(orderItem);
-      total += order.price;
+      total += price * quantity;
     });
 
     document.getElementById('totalPrice').textContent = `Total: ₱${total.toFixed(2)}`;
+  }
+
+  function decreaseOrderQuantity(productName) {
+    const orderIndex = orders.findIndex(order => order.name === productName);
+    if (orderIndex !== -1) {
+      orders.splice(orderIndex, 1);
+      renderOrders();
+    }
+  }
+
+  function increaseOrderQuantity(productName) {
+    const product = productPrices.find(item => item.name === productName);
+    if (product) {
+      orders.push(product);
+      renderOrders();
+    }
+  }
+
+  function checkout() {
+    const customerMoney = parseFloat(document.getElementById('customerMoney').value);
+    const total = orders.reduce((sum, order) => sum + order.price, 0);
+    const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+
+    if (!paymentMethod) {
+      alert("Please select a payment method.");
+      return;
+    }
+
+    if (isNaN(customerMoney) || customerMoney <= 0) {
+      alert("Please enter a valid amount for customer money.");
+      return;
+    }
+
+    if (customerMoney < total) {
+      alert("Insufficient funds. Please enter a higher amount.");
+      return;
+    }
+
+    const change = customerMoney - total;
+
+    // Generate order summary
+    const orderSummary = orders.reduce((summary, order) => {
+      if (summary[order.name]) {
+        summary[order.name].quantity++;
+      } else {
+        summary[order.name] = { price: order.price, quantity: 1 };
+      }
+      return summary;
+    }, {});
+
+    let orderDetails = "Order Summary:\n";
+    Object.keys(orderSummary).forEach(productName => {
+      const { price, quantity } = orderSummary[productName];
+      orderDetails += `${productName} (x${quantity}) - ₱${(price * quantity).toFixed(2)}\n`;
+    });
+
+    alert(`Payment Method: ${paymentMethod.value}\n${orderDetails}Total: ₱${total.toFixed(2)}\nChange: ₱${change.toFixed(2)}`);
+    orders.length = 0; // Clear orders
+    renderOrders();
+    document.getElementById('customerMoney').value = ''; // Clear input
   }
 
   function removeOrder(index) {
@@ -488,31 +565,9 @@
     console.log(`Category selected: ${category}`);
   }
 
-  function checkout() {
-    const customerMoney = parseFloat(document.getElementById('customerMoney').value);
-    const total = orders.reduce((sum, order) => sum + order.price, 0);
-
-    if (isNaN(customerMoney) || customerMoney <= 0) {
-      alert("Please enter a valid amount for customer money.");
-      return;
-    }
-
-    if (customerMoney < total) {
-      alert("Insufficient funds. Please enter a higher amount.");
-      return;
-    }
-
-    const change = customerMoney - total;
-    alert(`Checkout successful! Change: ₱${change.toFixed(2)}`);
-    orders.length = 0; // Clear orders
-    renderOrders();
-    document.getElementById('customerMoney').value = ''; // Clear input
-  }
-
   window.addEventListener('DOMContentLoaded', () => {
     handleClick('All');
   });
-</script>
 </script>
 
 
