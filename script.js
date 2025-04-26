@@ -59,7 +59,7 @@ function confirmAddToOrder() {
   for (let i = 0; i < quantity; i++) {
     orders.push(selectedProduct);
   }
-  alert(`${selectedProduct.name} (x${quantity}) added to orders 🛒`);
+  alert(`${selectedProduct.name} (x${quantity}) added to Orders`);
   console.log("Current Orders:", orders);
   renderOrders();
   closePopup();
