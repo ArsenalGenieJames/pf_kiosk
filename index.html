@@ -53,191 +53,231 @@
 
 
       <!-- drinks -->
-      <div class=" category-section flex justify-center mt-5 m-10 mb-20">
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <div class="bg-white rounded-lg shadow-md p-4">
-        <img src="./img/drinks/tanduay_select.webp" alt="Product 1" class="w-50 h-50 rounded-lg mb-4 mx-auto">
-        <h3 class="text-lg font-semibold">Tanduay Select</h3>
-        <p class="text-gray-600">A premium rum with a smooth and rich flavor, perfect for any occasion.</p>
-        <p class="text-gray-800 font-bold">₱150.00</p>
-      <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+    <div class=" category-section flex justify-center mt-5 m-10 mb-20">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <img src="./img/drinks/tanduay_dark.webp" alt="Product 1" class="w-100 h-50 rounded-lg mb-4 mx-auto">
+          <h3 class="text-lg font-semibold">Tanduay Dark</h3>
+          <p class="text-gray-600">A bold and full-bodied rum with a deep, rich flavor, perfect for those who enjoy a strong and smooth drink.</p>
+          <p class="text-gray-800 font-bold">₱78.00</p>
+          <button onclick="addToOrder('Tanduay Dark')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+        </div>
 
-          </div>
-          <div class="bg-white rounded-lg shadow-md p-4">
-        <img src="./img/drinks/tanduay_dark.webp" alt="Product 2" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-        <h3 class="text-lg font-semibold">Tanduay Dark</h3>
-        <p class="text-gray-600">A bold and full-bodied rum with a deep, rich flavor, perfect for those who enjoy a strong and smooth drink.</p>
-        <p class="text-gray-800 font-bold">₱78.00</p>
-       <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <img src="./img/drinks/tanduay_rhum.jpg" alt="Product 2" class="w-50 h-50 rounded-lg mb-4 mx-auto">
+          <h3 class="text-lg font-semibold">Tanduay Rhum</h3>
+          <p class="text-gray-600">A classic Filipino rum with a smooth and balanced taste, perfect for mixing or enjoying straight.</p>
+          <p class="text-gray-800 font-bold">₱50.00</p>
+          <button onclick="addToOrder('Tanduay Rhum')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+        </div>
 
-          </div>
-          <div class="bg-white rounded-lg shadow-md p-4">
-        <img src="./img/drinks/tanduay_rhum.jpg" alt="Product 3" class="w-50 h-50 rounded-lg mb-4 mx-auto">
-        <h3 class="text-lg font-semibold">Tanduay Rhum</h3>
-        <p class="text-gray-600">A classic Filipino rum with a smooth and balanced taste, perfect for mixing or enjoying straight.</p>
-        <p class="text-gray-800 font-bold">₱50.00</p>
-       <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
-          </div>
-          <div class="bg-white rounded-lg shadow-md p-4">
-        <img src="./img/drinks/ginebra san miguel.jpg" alt="Product 4" class="w-50 h-55 rounded-lg mb-4 mx-auto">
-        <h3 class="text-lg font-semibold">Ginebra San Miguel</h3>
-        <p class="text-gray-600">A classic Filipino gin with a smooth and crisp taste, perfect for mixing or enjoying straight.</p>
-        <p class="text-gray-800 font-bold">₱57.00</p>
-       <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
-          </div>
-          <div class="bg-white rounded-lg shadow-md p-4">
-        <img src="./img/drinks/redhorse.webp" alt="Product 5" class="w-50 h-50 rounded-lg mb-4 mx-auto">
-        <h3 class="text-lg font-semibold">Redhorse Beer</h3>
-        <p class="text-gray-600">A strong and full-flavored beer, perfect for those who enjoy a bold and refreshing drink.</p>
-        <p class="text-gray-800 font-bold">₱140.00</p>
-       <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
-          </div>
-          <div class="bg-white rounded-lg shadow-md p-4">
-        <img src="./img/drinks/bacardi 151.webp" alt="Product 6" class="w-50 h-50 rounded-lg mb-4 mx-auto">
-        <h3 class="text-lg font-semibold">Bacardi 151</h3>
-        <p class="text-gray-600">A high-proof rum with a bold and fiery flavor, perfect for cocktails and adventurous drinkers.</p>
-        <p class="text-gray-800 font-bold">₱4,899.00</p>
-       <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
-          </div>
-          <div class="bg-white rounded-lg shadow-md p-4">
-        <img src="./img/drinks/The Bar Pink Gin.webp" alt="Product 7" class="w-50 h-50 rounded-lg mb-4 mx-auto">
-        <h3 class="text-lg font-semibold">The Bar Pink Gin</h3>
-        <p class="text-gray-600">A delightful and refreshing gin with a hint of pink, perfect for any celebration.</p>
-        <p class="text-gray-800 font-bold">₱139.00</p>
-       <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
-          </div>
-          <div class="bg-white rounded-lg shadow-md p-4">
-        <img src="./img/drinks/Antonov _Vodka.webp" alt="Product 8" class="w-50 h-50 rounded-lg mb-4 mx-auto">
-        <h3 class="text-lg font-semibold">Antonov Vodka</h3>
-        <p class="text-gray-600">A smooth and versatile vodka, perfect for mixing or enjoying straight.</p>
-        <p class="text-gray-800 font-bold">₱320.00</p>
-        <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
-          </div>
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <img src="./img/drinks/tanduay_select.webp" alt="Product 2" class="w-50 h-50 rounded-lg mb-4 mx-auto">
+          <h3 class="text-lg font-semibold">Tanduay Select</h3>
+          <p class="text-gray-600">A bold and full-bodied rum with a deep, rich flavor, perfect for those who enjoy a strong and smooth drink.</p>
+          <p class="text-gray-800 font-bold">₱150.00</p>
+          <button onclick="addToOrder('Tanduay Select')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <img src="./img/drinks/ginebra san miguel.jpg" alt="Product 3" class="w-70 h-55 rounded-lg mb-4 mx-auto">
+          <h3 class="text-lg font-semibold">Ginebra San Miguel</h3>
+          <p class="text-gray-600">A classic Filipino gin with a smooth and crisp taste, perfect for mixing or enjoying straight.</p>
+          <p class="text-gray-800 font-bold">₱57.00</p>
+          <button onclick="addToOrder('Ginebra San Miguel')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <img src="./img/drinks/redhorse.webp" alt="Product 4" class="w-50 h-50 rounded-lg mb-4 mx-auto">
+          <h3 class="text-lg font-semibold">Redhorse Beer</h3>
+          <p class="text-gray-600">A strong and full-flavored beer, perfect for those who enjoy a bold and refreshing drink.</p>
+          <p class="text-gray-800 font-bold">₱140.00</p>
+          <button onclick="addToOrder('Redhorse Beer')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <img src="./img/drinks/bacardi 151.webp" alt="Product 5" class="w-50 h-50 rounded-lg mb-4 mx-auto">
+          <h3 class="text-lg font-semibold">Bacardi 151</h3>
+          <p class="text-gray-600">A high-proof rum with a bold and fiery flavor, perfect for cocktails and adventurous drinkers.</p>
+          <p class="text-gray-800 font-bold">₱4,899.00</p>
+          <button onclick="addToOrder('Bacardi 151')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <img src="./img/drinks/The Bar Pink Gin.webp" alt="Product 6" class="w-50 h-50 rounded-lg mb-4 mx-auto">
+          <h3 class="text-lg font-semibold">The Bar Pink Gin</h3>
+          <p class="text-gray-600">A delightful and refreshing gin with a hint of pink, perfect for any celebration.</p>
+          <p class="text-gray-800 font-bold">₱139.00</p>
+          <button onclick="addToOrder('The Bar Pink Gin')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <img src="./img/drinks/Antonov _Vodka.webp" alt="Product 7" class="w-50 h-50 rounded-lg mb-4 mx-auto">
+          <h3 class="text-lg font-semibold">Antonov Vodka</h3>
+          <p class="text-gray-600">A smooth and versatile vodka, perfect for mixing or enjoying straight.</p>
+          <p class="text-gray-800 font-bold">₱320.00</p>
+          <button onclick="addToOrder('Antonov Vodka')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
         </div>
       </div>
-
+    </div>
 
       <!-- pulotan -->
       <div class=" category-section flex justify-center mt-5 m-10 mb-20">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
           <div class="bg-white rounded-lg shadow-md p-4">
             <img src="./img/Pulotan/Adob mani with fried garlic.jpg" alt="Product 1" class="w-100 h-50 rounded-lg mb-4 mx-auto">
             <h3 class="text-lg font-semibold">Adobo Mani with Fried Garlic</h3>
             <p class="text-gray-600">A savory and crunchy snack made from fried peanuts with garlic, perfect for pairing with drinks.</p>
             <p class="text-gray-800 font-bold">₱50.00</p>
-           <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+             <button onclick="addToOrder('Adobo Mani with Fried Garlic')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
+
           <div class="bg-white rounded-lg shadow-md p-4">
             <img src="./img/Pulotan/Fried Bangus.jpg" alt="Product 2" class="w-100 h-50 rounded-lg mb-4 mx-auto">
             <h3 class="text-lg font-semibold">Fried Bangus</h3>
             <p class="text-gray-600">A crispy and flavorful fried milkfish, perfect as a snack or paired with drinks.</p>
             <p class="text-gray-800 font-bold">₱270.00</p>
-           <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+            <button onclick="addToOrder('Fried Bangus')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
-          <div class="bg-white rounded-lg shadow-md p-4">
+
+            <div class="bg-white rounded-lg shadow-md p-4">
             <img src="./img/Pulotan/Grilled-Pork-Belly.jpg" alt="Product 3" class="w-100 h-50 rounded-lg mb-4 mx-auto">
             <h3 class="text-lg font-semibold">Grilled Pork Belly</h3>
             <p class="text-gray-600">A juicy and flavorful grilled pork belly, perfect for pairing with drinks or as a main dish.</p>
             <p class="text-gray-800 font-bold">₱215.00</p>
-           <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+          <button onclick="addToOrder('Grilled Pork Belly')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
+
           <div class="bg-white rounded-lg shadow-md p-4">
             <img src="./img/Pulotan/Kapampangan_Sisig.jpg" alt="Product 4" class="w-100 h-50 rounded-lg mb-4 mx-auto">
             <h3 class="text-lg font-semibold">Kapampangan Sisig</h3>
             <p class="text-gray-600">A flavorful and crispy Kapampangan delicacy made from pork, perfect for pairing with drinks.</p>
             <p class="text-gray-800 font-bold">₱480.00</p>
-           <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+            <button onclick="addToOrder('Kapampangan Sisig')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
+
           <div class="bg-white rounded-lg shadow-md p-4">
             <img src="./img/Pulotan/Kinilaw_of_Northern_Mindanao.jpg" alt="Product 5" class="w-100 h-50 rounded-lg mb-4 mx-auto">
             <h3 class="text-lg font-semibold">Kinilaw of Northern Mindanao</h3>
             <p class="text-gray-600">A tangy and refreshing Northern Mindanao seafood dish marinated in vinegar and citrus, perfect as an appetizer.</p>
             <p class="text-gray-800 font-bold">₱320.00</p>
-           <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+            <button onclick="addToOrder('Kinilaw of Northern Mindanao')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
+
           <div class="bg-white rounded-lg shadow-md p-4">
             <img src="./img/Pulotan/lechon kawali.jpg" alt="Product 6" class="w-100 h-50 rounded-lg mb-4 mx-auto">
             <h3 class="text-lg font-semibold">Lechon Kawali</h3>
             <p class="text-gray-600">A crispy and savory Filipino pork belly dish, deep-fried to golden perfection, great for pairing with rice or dipping sauces.</p>
             <p class="text-gray-800 font-bold">₱700.00</p>
-           <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+            <button onclick="addToOrder('Lechon Kawali')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
+
           <div class="bg-white rounded-lg shadow-md p-4">
             <img src="./img/Pulotan/lechon manok.jpg" alt="Product 7" class="w-100 h-50 rounded-lg mb-4 mx-auto">
             <h3 class="text-lg font-semibold">Lechon Manok</h3>
             <p class="text-gray-600">A flavorful and juicy Filipino roasted chicken, marinated with spices and grilled to perfection.</p>
             <p class="text-gray-800 font-bold">₱350.00</p>
-           <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+            <button onclick="addToOrder('Lechon Manok')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
+
           <div class="bg-white rounded-lg shadow-md p-4">
             <img src="./img/Pulotan/Pasayan.jpg" alt="Product 8" class="w-100 h-50 rounded-lg mb-4 mx-auto">
             <h3 class="text-lg font-semibold">Pasayan</h3>
             <p class="text-gray-600">Fresh Northern Mindanao shrimp, prized for its sweet and tender flavor, perfect for grilling or cooking in local dishes.</p>
             <p class="text-gray-800 font-bold">₱650.00</p>
-           <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+            <button onclick="addToOrder('Pasayan')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
+
         </div>
       </div>
 
       <!-- dessert -->
       <div class=" category-section flex justify-center mt-5 m-10 mb-20">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
           <div class="bg-white rounded-lg shadow-md p-4">
             <img src="./img/dessert/Buko-Pandan-Jelly.png" alt="Product 1" class="w-100 h-50 rounded-lg mb-4 mx-auto">
             <h3 class="text-lg font-semibold">Buko Pandan Jelly</h3>
             <p class="text-gray-600">A refreshing Filipino dessert made with tender coconut strips, vibrant green pandan jelly, and sweet cream perfect for cooling down and vibing any time,</p>
-            <p class="text-gray-800 font-bold">₱120</p>
-           <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+            <p class="text-gray-800 font-bold">₱120.00</p>
+            <button onclick="addToOrder('Buko Pandan Jelly')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
+
           <div class="bg-white rounded-lg shadow-md p-4">
             <img src="./img/dessert/cassava-cake-1.webp" alt="Product 2" class="w-100 h-50 rounded-lg mb-4 mx-auto">
             <h3 class="text-lg font-semibold">Cassava Cake</h3>
             <p class="text-gray-600">A rich and chewy Filipino favorite made from freshly grated cassava, creamy coconut milk, and sweet condensed milk, baked to golden perfection and topped with a luscious custard layer.</p>
-            <p class="text-gray-800 font-bold">₱50</p>
-           <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+            <p class="text-gray-800 font-bold">₱50.00</p>
+          <button onclick="addToOrder('Cassava Cake')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
+
           <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/drinks/Pineapple-Juice-Regular.webp" alt="Product 3" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Product 3</h3>
-            <p class="text-gray-600">Description of Product 3</p>
-            <p class="text-gray-800 font-bold">$20.00</p>
-           <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+            <img src="./img/dessert/easy_chocolate_cake_slice.webp" alt="Product 3" class="w-100 h-50 rounded-lg mb-4 mx-auto">
+            <h3 class="text-lg font-semibold">Chocolate Cake Slice </h3>
+            <p class="text-gray-600">A rich, moist slice of chocolate heaven layered with smooth fudge frosting and baked to decadent perfection. Perfect for chocoholics craving that sweet fix.</p>
+            <p class="text-gray-800 font-bold">₱180.00</p>
+          <button onclick="addToOrder('Chocolate Cake Slice')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
+
+            <div class="bg-white rounded-lg shadow-md p-4">
+            <img src="./img/dessert/Leche Flan with Cream Cheese.jpg" alt="Product 4" class="w-100 h-50 rounded-lg mb-4 mx-auto">
+            <h3 class="text-lg font-semibold">Leche Flan with Cream Cheese</h3>
+            <p class="text-gray-600">A creamy twist on the classic our Leche Flan with Cream Cheese is ultra smooth, rich, and melt-in-your-mouth, with a luscious caramel top and a subtle cheesecake vibe. A true Filipino dessert glow-up.</p>
+            <p class="text-gray-800 font-bold">₱200.00</p>
+             <button onclick="addToOrder('Leche Flan with Cream Cheese')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+          </div>
+
           <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/drinks/Coke-Float.webp" alt="Product 4" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Product 4</h3>
-            <p class="text-gray-600">Description of Product 4</p>
-            <p class="text-gray-800 font-bold">$25.00</p>
-           <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+            <img src="./img/dessert/majablanca.jpg" alt="Product 5" class="w-100 h-50 rounded-lg mb-4 mx-auto">
+            <h3 class="text-lg font-semibold">Maja Blanca</h3>
+            <p class="text-gray-600">Smooth, creamy coconut pudding topped with golden corn and a sprinkle of toasted coconut our Maja Blanca slice is the perfect blend of sweet, soft, and satisfying.</p>
+            <p class="text-gray-800 font-bold">₱120.00</p>
+            <button onclick="addToOrder('Maja Blanca')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
+
           <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/drinks/Orange-Juice.webp" alt="Product 5" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Product 5</h3>
-            <p class="text-gray-600">Description of Product 5</p>
-            <p class="text-gray-800 font-bold">$12.00</p>
-           <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+            <img src="./img/dessert/Mix and Match Halo-Halo.jpg" alt="Product 6" class="w-100 h-50 rounded-lg mb-4 mx-auto">
+            <h3 class="text-lg font-semibold">Mix and Match Halo-Halo</h3>
+            <p class="text-gray-600">Create your own tropical masterpiece with our Mix and Match Halo-Halo! Choose from a variety of colorful toppings like shaved ice, leche flan, ube, fruits, and more. A sweet, refreshing experience in every spoonful you build, you slay!</p>
+            <p class="text-gray-800 font-bold">₱350.00</p>
+           <button onclick="addToOrder('Mix and Match Halo-Halo')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
+
           <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/drinks/Lemonade.webp" alt="Product 6" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Product 6</h3>
-            <p class="text-gray-600">Description of Product 6</p>
-            <p class="text-gray-800 font-bold">$18.00</p>
-           <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+            <img src="./img/dessert/polvoron chocolate coated.JPG" alt="Product 7" class="w-100 h-50 rounded-lg mb-4 mx-auto">
+            <h3 class="text-lg font-semibold">Polvoron Chocolate Coated</h3>
+            <p class="text-gray-600">A delightful twist on the classic Filipino treat our Polvoron Chocolate Coated combines the crumbly, buttery goodness of traditional polvoron with a rich, silky chocolate coating. Perfect for those who crave a sweet, melt-in-your-mouth experience!</p>
+            <p class="text-gray-800 font-bold">₱250.00</p>
+           <button onclick="addToOrder('Polvoron Chocolate Coated')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
+
           <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/drinks/Strawberry-Smoothie.webp" alt="Product 7" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Product 7</h3>
-            <p class="text-gray-600">Description of Product 7</p>
-            <p class="text-gray-800 font-bold">$22.00</p>
-           <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+            <img src="./img/dessert/Ube Ice Cream Sandwiches.jpg" alt="Product 8" class="w-100 h-50 rounded-lg mb-4 mx-auto">
+            <h3 class="text-lg font-semibold">Ube Ice Cream Sandwiches</h3>
+            <p class="text-gray-600">A fun and flavorful twist on your classic ice cream sandwich soft, pillowy ube-flavored cookies with creamy, vibrant ube ice cream in the middle. The perfect balance of chewy, cold, and sweet for those who live for that purple goodness!</p>
+            <p class="text-gray-800 font-bold">₱90.00</p>
+           <button onclick="addToOrder('Ube Ice Cream Sandwiches')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
-          <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/drinks/Chocolate-Milkshake.webp" alt="Product 8" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Product 8</h3>
-            <p class="text-gray-600">Description of Product 8</p>
-            <p class="text-gray-800 font-bold">$30.00</p>
-           <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
+
+        </div>
+      </div>
+
+
+
+      <div id="popupModal" class="fixed inset-0 flex items-center justify-center bg-opacity-50 hidden">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-96">
+          <div class="flex justify-between items-center mb-4">
+            <h3 id="popupProductName" class="text-lg font-semibold"></h3>
+            <button onclick="closePopup()" class="text-gray-500 hover:text-gray-700">&times;</button>
           </div>
+          <p id="popupProductPrice" class="text-gray-800 font-bold mb-4"></p>
+          <div class="flex items-center space-x-4 mb-4">
+            <button onclick="decreaseQuantity()" class="bg-gray-200 px-3 py-1 rounded-lg">-</button>
+            <span id="quantity" class="text-lg font-semibold">1</span>
+            <button onclick="increaseQuantity()" class="bg-gray-200 px-3 py-1 rounded-lg">+</button>
+          </div>
+          <button onclick="confirmAddToOrder()" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-[#cf212a]">Add to Orders</button>
         </div>
       </div>
 
@@ -245,35 +285,7 @@
 
 
 
-
-      <!-- Overlay and Centered Modal -->
-    <div id="popup-modal" tabindex="-1" class="fixed inset-0 z-50 hidden flex items-center justify-center  bg-opacity-50">
-      <div class="relative p-4 w-full max-w-md">
-        <div class="relative bg-white rounded-lg shadow-lg">
-      <!-- Close Button -->
-      <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 flex justify-center items-center" data-modal-hide="popup-modal">
-        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1l6 6m0 0l6 6M7 7l6-6M7 7L1 13"/>
-        </svg>
-        <span class="sr-only">Close modal</span>
-      </button>
-
-      <!-- Modal Content -->
-      <div class="p-4 md:p-5 text-center">
-        <svg class="mx-auto mb-4 text-gray-400 w-12 h-12" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-        </svg>
-        <h3 class="mb-5 text-lg font-normal text-gray-500">Dine-in or Dine-out</h3>
-        <button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
-          Dine-in
-        </button>
-        <button data-modal-hide="popup-modal" type="button" class="py-2.5 px-5 ml-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">
-          Dine out
-        </button>
-      </div>
-        </div>
-      </div>
-    </div>
+    
 
 
     
@@ -301,42 +313,80 @@
 
 <script>
   const orders = [];
-  let dineOption = null; // null until user picks Dine-in or Dine-out
 
-  // Show modal
-  function showDineOptionModal() {
-    const modal = document.getElementById('popup-modal');
-    modal.classList.remove('hidden');
+  // Product prices array
+  const productPrices = [
+    { name: "Tanduay Select", price: 150.00 },
+    { name: "Tanduay Dark", price: 78.00 },
+    { name: "Tanduay Rhum", price: 50.00 },
+    { name: "Ginebra San Miguel", price: 57.00 },
+    { name: "Redhorse Beer", price: 140.00 },
+    { name: "Bacardi 151", price: 4899.00 },
+    { name: "The Bar Pink Gin", price: 139.00 },
+    { name: "Antonov Vodka", price: 320.00 },
+    { name: "Adobo Mani with Fried Garlic", price: 50.00 },
+    { name: "Fried Bangus", price: 270.00 },
+    { name: "Grilled Pork Belly", price: 215.00 },
+    { name: "Kapampangan Sisig", price: 480.00 },
+    { name: "Kinilaw of Northern Mindanao", price: 320.00 },
+    { name: "Lechon Kawali", price: 700.00 },
+    { name: "Lechon Manok", price: 350.00 },
+    { name: "Pasayan", price: 650.00 },
+    { name: "Buko Pandan Jelly", price: 120.00 },
+    { name: "Cassava Cake", price: 50.00 },
+    { name: "Chocolate Cake Slice", price: 180.00 },
+    { name: "Leche Flan with Cream Cheese", price: 200.00 },
+    { name: "Maja Blanca", price: 120.00 },
+    { name: "Mix and Match Halo-Halo", price: 350.00 },
+    { name: "Polvoron Chocolate Coated", price: 250.00 },
+    { name: "Ube Ice Cream Sandwiches", price: 90.00 }
+  ];
+
+  let selectedProduct = {};
+  let quantity = 1;
+
+  function openPopup(productName, productPrice) {
+    selectedProduct = { name: productName, price: productPrice };
+    quantity = 1;
+    document.getElementById('popupProductName').textContent = productName;
+    document.getElementById('popupProductPrice').textContent = `₱${productPrice.toFixed(2)}`;
+    document.getElementById('quantity').textContent = quantity;
+    document.getElementById('popupModal').classList.remove('hidden');
   }
 
-  // Hide modal
-  function hideDineOptionModal() {
-    const modal = document.getElementById('popup-modal');
-    modal.classList.add('hidden');
+  function closePopup() {
+    document.getElementById('popupModal').classList.add('hidden');
   }
 
-  // Handle modal buttons
-  document.querySelectorAll('[data-modal-hide="popup-modal"]').forEach(button => {
-    button.addEventListener('click', () => {
-      dineOption = button.textContent.trim(); // "Dine-in" or "Dine out"
-      hideDineOptionModal();
-      alert(`Selected: ${dineOption}`);
-      addToOrder(); // Proceed with adding item after selecting dine option
-    });
-  });
+  function increaseQuantity() {
+    quantity++;
+    document.getElementById('quantity').textContent = quantity;
+  }
+
+  function decreaseQuantity() {
+    if (quantity > 1) {
+      quantity--;
+      document.getElementById('quantity').textContent = quantity;
+    }
+  }
+
+  function confirmAddToOrder() {
+    for (let i = 0; i < quantity; i++) {
+      orders.push(selectedProduct);
+    }
+    alert(`${selectedProduct.name} (x${quantity}) added to orders 🛒`);
+    console.log("Current Orders:", orders);
+    closePopup();
+  }
 
   // Modified Add to Order function
-  function addToOrder() {
-    if (!dineOption) {
-      showDineOptionModal(); // Show modal on first interaction
-      return;
+  function addToOrder(productName) {
+    const product = productPrices.find(item => item.name === productName);
+    if (product) {
+      openPopup(product.name, product.price);
+    } else {
+      alert("Product not found!");
     }
-
-    // Continue to add product to orders
-    alert("Item added to orders 🛒");
-    // You can push actual product data here later
-    orders.push({ item: "Sample Item", dineOption });
-    console.log("Current Orders:", orders);
   }
 
   // Category filtering with active state
@@ -390,7 +440,7 @@
     handleClick('All');
   });
 </script>
-</script>
+
 
       
 
