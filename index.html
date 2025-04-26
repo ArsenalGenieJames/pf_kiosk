@@ -14,41 +14,42 @@
     
     
 
-  <nav class="border-gray-200 bg-gray-50 dark:border-gray-700">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+  <nav class="bg-white border-gray-200 dark:bg-gray-900"></nav>
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
       <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="./img/logo/serbesalogo.png" class="w-10 h-10 bg-white" alt="Flowbite Logo" />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap text-white dark:text-white">Serbesa</span>
+        <img src="./img/logo/serbesalogo.png" class="h-8 bg-white" alt="Serbesa Logo" />
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <span style="color: #131313;">Serbe</span><span style="color: #cf212a;">sa</span>
+        </span>
       </a>
-      <button data-collapse-toggle="navbar-solid-bg" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-solid-bg" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-      </button>
-      <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
-        <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
-          <li>
-        <div onclick="handleClick('Menu')" class="block py-2 px-3 md:p-0 text-white rounded-sm md:bg-transparent md:text-white md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent cursor-pointer hover:underline" aria-current="page">Menu</div>
-          </li>
-          <li>
-        <div onclick="handleClick('Orders')" class="block py-2 px-3 md:p-0 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-white dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent cursor-pointer hover:underline">Orders</div>
-          </li>
-          <li>
-        <div onclick="handleClick('Summary')" class="block py-2 px-3 md:p-0 text-white rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-white dark:text-white md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent cursor-pointer hover:underline">Summary</div>
-          </li>
+      <div class="flex items-center space-x-6 rtl:space-x-reverse">
+        <div onclick="handleClick('Menu')" class="text-gray-900 dark:text-white hover:underline cursor-pointer" aria-current="page">Menu</div>
+        <div onclick="handleClick('Orders')" class="text-gray-900 dark:text-white hover:underline cursor-pointer" aria-current="page">Orders</div>
+        <div onclick="handleClick('Summary')" class="text-gray-900 dark:text-white hover:underline cursor-pointer" aria-current="page">Summary</div>
+      </div>
+    </div>
+  </nav>
+  <nav class="bg-gray-50 dark:bg-gray-700">
+    <div class="max-w-screen-xl px-4 py-3 mx-auto">
+      <div class="flex items-center">
+        <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
+            <li>
+            <div onclick="handleClick('All')" class="cursor-pointer text-white hover:underline">All</div>
+            </li>
+            <li>
+            <div onclick="handleClick('Drinks')" class="cursor-pointer text-white hover:underline">Drinks</div>
+            </li>
+            <li>
+            <div onclick="handleClick('Meals')" class="cursor-pointer text-white hover:underline">Pulotan</div>
+            </li>
+            <li>
+            <div onclick="handleClick('Dessert')" class="cursor-pointer text-white hover:underline">Dessert</div>
+            </li>
+        </ul>
         </ul>
       </div>
     </div>
   </nav>
-
-
-      <div class="flex justify-center space-x-4 rtl:space-x-reverse mt-5">
-        <div onclick="handleClick('All')" class="cursor-pointer hover:text-[#cf212a] hover:underline">All</div>
-        <div onclick="handleClick('Drinks')" class="cursor-pointer hover:text-[#cf212a] hover:underline">Drinks</div>
-        <div onclick="handleClick('Meals')" class="cursor-pointer hover:text-[#cf212a] hover:underline">Pulotan</div>
-        <div onclick="handleClick('Dessert')" class="cursor-pointer hover:text-[#cf212a] hover:underline">Dessert</div>
-      </div>
 
 
       <!-- drinks -->
@@ -182,17 +183,17 @@
       <div class=" category-section flex justify-center mt-5 m-10 mb-20">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/drinks/softdrinksbrand.avif" alt="Product 1" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Dessert</h3>
-            <p class="text-gray-600">Description of Product 1</p>
-            <p class="text-gray-800 font-bold">$10.00</p>
+            <img src="./img/dessert/Buko-Pandan-Jelly.png" alt="Product 1" class="w-100 h-50 rounded-lg mb-4 mx-auto">
+            <h3 class="text-lg font-semibold">Buko Pandan Jelly</h3>
+            <p class="text-gray-600">A refreshing Filipino dessert made with tender coconut strips, vibrant green pandan jelly, and sweet cream perfect for cooling down and vibing any time,</p>
+            <p class="text-gray-800 font-bold">₱120</p>
            <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
           <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/drinks/soffdrinks1.jpg" alt="Product 2" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Product 2</h3>
-            <p class="text-gray-600">Description of Product 2</p>
-            <p class="text-gray-800 font-bold">$15.00</p>
+            <img src="./img/dessert/cassava-cake-1.webp" alt="Product 2" class="w-100 h-50 rounded-lg mb-4 mx-auto">
+            <h3 class="text-lg font-semibold">Cassava Cake</h3>
+            <p class="text-gray-600">A rich and chewy Filipino favorite made from freshly grated cassava, creamy coconut milk, and sweet condensed milk, baked to golden perfection and topped with a luscious custard layer.</p>
+            <p class="text-gray-800 font-bold">₱50</p>
            <button onclick="addToOrder()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer float-right hover:bg-[#cf212a]">Add to Orders</button>
           </div>
           <div class="bg-white rounded-lg shadow-md p-4">
