@@ -118,62 +118,65 @@ function increaseOrderQuantity(productName) {
   }
 }
 
+
+//function of checkout nga handle ang payment method and customer money then popup ang order summary
 function checkout() {
-    const customerMoney = parseFloat(document.getElementById('customerMoney').value);
-    const total = orders.reduce((sum, order) => sum + order.price, 0);
-    const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+  const customerMoney = parseFloat(document.getElementById('customerMoney').value);
+  const total = orders.reduce((sum, order) => sum + order.price, 0);
+  const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
 
-    if (!paymentMethod) {
-        alert("Please select a payment method.");
-        return;
+  if (!paymentMethod) {
+    alert("Please select a payment method.");
+    return;
+  }
+
+  if (isNaN(customerMoney) || customerMoney <= 0) {
+    alert("Please enter a valid amount for customer money.");
+    return;
+  }
+
+  if (customerMoney < total) {
+    alert("Insufficient funds. Please enter a higher amount.");
+    return;
+  }
+
+  const change = customerMoney - total;
+
+  // Generate order summary
+  const orderSummary = orders.reduce((summary, order) => {
+    if (summary[order.name]) {
+      summary[order.name].quantity++;
+    } else {
+      summary[order.name] = { price: order.price, quantity: 1 };
     }
+    return summary;
+  }, {});
 
-    if (isNaN(customerMoney) || customerMoney <= 0) {
-        alert("Please enter a valid amount for customer money.");
-        return;
-    }
+  let orderDetails = "";  
+  Object.keys(orderSummary).forEach(productName => {
+    const { price, quantity } = orderSummary[productName];
+    orderDetails += `${productName} (x${quantity}) - ₱${(price * quantity).toFixed(2)}\n`;
+  });
 
-    if (customerMoney < total) {
-        alert("Insufficient funds. Please enter a higher amount.");
-        return;
-    }
+  alert(`Payment Method: ${paymentMethod.value}\n${orderDetails}Total: ₱${total.toFixed(2)}\nChange: ₱${change.toFixed(2)}`);
 
-    const change = customerMoney - total;
+  // Rest of the function remains the same (diri na mag popup ang order summary customer history na ngipag palit)
+  const historyList = document.getElementById('historyList');
+  const historyItem = document.createElement('div');
+  historyItem.className = 'border-b pb-2 mb-2';
+  historyItem.innerHTML = `
+    <p><strong>Payment Method:</strong> ${paymentMethod.value}</p>
+    <p>${orderDetails.replace(/\n/g, '<br>')}</p>
+    <p><strong>Total:</strong> ₱${total.toFixed(2)}</p>
+    <p><strong>Change:</strong> ₱${change.toFixed(2)}</p>
+  `;
+  historyList.appendChild(historyItem);
 
-    // Generate order summary
-    const orderSummary = orders.reduce((summary, order) => {
-        if (summary[order.name]) {
-            summary[order.name].quantity++;
-        } else {
-            summary[order.name] = { price: order.price, quantity: 1 };
-        }
-        return summary;
-    }, {});
-
-    let orderDetails = "Order Summary:\n";
-    Object.keys(orderSummary).forEach(productName => {
-        const { price, quantity } = orderSummary[productName];
-        orderDetails += `${productName} (x${quantity}) - ₱${(price * quantity).toFixed(2)}\n`;
-    });
-
-    alert(`Payment Method: ${paymentMethod.value}\n${orderDetails}Total: ₱${total.toFixed(2)}\nChange: ₱${change.toFixed(2)}`);
-
-    // Add order summary to historyList
-    const historyList = document.getElementById('historyList');
-    const historyItem = document.createElement('div');
-    historyItem.className = 'border-b pb-2 mb-2';
-    historyItem.innerHTML = `
-        <p><strong>Payment Method:</strong> ${paymentMethod.value}</p>
-        <p>${orderDetails.replace(/\n/g, '<br>')}</p>
-        <p><strong>Total:</strong> ₱${total.toFixed(2)}</p>
-        <p><strong>Change:</strong> ₱${change.toFixed(2)}</p>
-    `;
-    historyList.appendChild(historyItem);
-
-    orders.length = 0; // Clear orders
-    renderOrders();
-    document.getElementById('customerMoney').value = ''; // Clear input
+  orders.length = 0;
+  renderOrders();
+  document.getElementById('customerMoney').value = '';
 }
+
 
 
 function removeOrder(index) {
@@ -192,7 +195,7 @@ function addToOrder(productName) {
 
 
 
-
+// Function to handle category selection and show/hide sections accordingly(navigation bar click ni siya )
 function handleClick(category) {
     const sections = document.querySelectorAll('.category-section');
     const ordersSection = document.getElementById('ordersSection');
