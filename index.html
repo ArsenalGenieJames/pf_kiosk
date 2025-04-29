@@ -1,20 +1,20 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="./img/logo/serbesalogo.jpg">
     <link rel="stylesheet" href="style.css">
     <title>Serbesa Bar and Grill </title>
-  </head>
-  <body>
-    
-  <nav class="bg-white border-gray-200 dark:bg-gray-900"></nav>
+</head>
+<body>
+    <nav class="bg-white border-gray-200 dark:bg-gray-900"></nav>
     <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
-      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="./img/logo/serbesalogo.png" class="h-8 bg-white" alt="Serbesa Logo" />
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
           <span style="color: #131313;">Serbe</span><span style="color: #cf212a;">sa</span>
@@ -22,320 +22,312 @@
         </span>
       </a>
       <div class="flex items-center space-x-6 rtl:space-x-reverse">
-        <div onclick="handleClick('Menu')" class="text-gray-900 hover:underline cursor-pointer dark:text-gray-900" aria-current="page">Menu</div>
-        <div onclick="handleClick('Orders')" class="text-gray-900 hover:underline cursor-pointer dark:text-gray-900" aria-current="page">Orders</div>
-        <div onclick="handleClick('Summary')" class="text-gray-900 hover:underline cursor-pointer dark:text-gray-900" aria-current="page">Summary</div>
-      </div>
-    </div>
-  </nav>
-  <nav class="bg-gray-50 dark:bg-gray-700">
-    <div class="max-w-screen-xl px-4 py-3 mx-auto">
-      <div class="flex items-center">
-        <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
-            <li>
-            <div onclick="handleClick('All')" class="cursor-pointer text-white hover:underline">All</div>
-            </li>
-            <li>
-            <div onclick="handleClick('Drinks')" class="cursor-pointer text-white hover:underline">Drinks</div>
-            </li>
-            <li>
-            <div onclick="handleClick('Meals')" class="cursor-pointer text-white hover:underline">Pulotan</div>
-            </li>
-            <li>
-            <div onclick="handleClick('Dessert')" class="cursor-pointer text-white hover:underline">Dessert</div>
-            </li>
-        </ul>
-        </ul>
+        <a href="menu.html" class="text-gray-900 hover:underline cursor-pointer dark:text-gray-900" aria-current="page">Menu</a>
       </div>
     </div>
   </nav>
 
-
-      <!-- drinks -->
-    <div class=" category-section flex justify-center mt-5 m-10 mb-20">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <div class="bg-white rounded-lg shadow-md p-4">
-          <img src="./img/drinks/tanduay_dark.webp" alt="Product 1" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-          <h3 class="text-lg font-semibold">Tanduay Dark</h3>
-          <p class="text-gray-600">A bold and full-bodied rum with a deep, rich flavor, perfect for those who enjoy a strong and smooth drink.</p>
-          <p class="text-gray-800 font-bold">₱78.00</p>
-          <button onclick="addToOrder('Tanduay Dark')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-md p-4">
-          <img src="./img/drinks/tanduay_rhum.jpg" alt="Product 2" class="w-50 h-50 rounded-lg mb-4 mx-auto">
-          <h3 class="text-lg font-semibold">Tanduay Rhum</h3>
-          <p class="text-gray-600">A classic Filipino rum with a smooth and balanced taste, perfect for mixing or enjoying straight.</p>
-          <p class="text-gray-800 font-bold">₱50.00</p>
-          <button onclick="addToOrder('Tanduay Rhum')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-md p-4">
-          <img src="./img/drinks/tanduay_select.webp" alt="Product 2" class="w-50 h-50 rounded-lg mb-4 mx-auto">
-          <h3 class="text-lg font-semibold">Tanduay Select</h3>
-          <p class="text-gray-600">A bold and full-bodied rum with a deep, rich flavor, perfect for those who enjoy a strong and smooth drink.</p>
-          <p class="text-gray-800 font-bold">₱150.00</p>
-          <button onclick="addToOrder('Tanduay Select')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-md p-4">
-          <img src="./img/drinks/ginebra san miguel.jpg" alt="Product 3" class="w-70 h-55 rounded-lg mb-4 mx-auto">
-          <h3 class="text-lg font-semibold">Ginebra San Miguel</h3>
-          <p class="text-gray-600">A classic Filipino gin with a smooth and crisp taste, perfect for mixing or enjoying straight.</p>
-          <p class="text-gray-800 font-bold">₱57.00</p>
-          <button onclick="addToOrder('Ginebra San Miguel')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-md p-4">
-          <img src="./img/drinks/redhorse.webp" alt="Product 4" class="w-50 h-50 rounded-lg mb-4 mx-auto">
-          <h3 class="text-lg font-semibold">Redhorse Beer</h3>
-          <p class="text-gray-600">A strong and full-flavored beer, perfect for those who enjoy a bold and refreshing drink.</p>
-          <p class="text-gray-800 font-bold">₱140.00</p>
-          <button onclick="addToOrder('Redhorse Beer')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-md p-4">
-          <img src="./img/drinks/bacardi 151.webp" alt="Product 5" class="w-50 h-50 rounded-lg mb-4 mx-auto">
-          <h3 class="text-lg font-semibold">Bacardi 151</h3>
-          <p class="text-gray-600">A high-proof rum with a bold and fiery flavor, perfect for cocktails and adventurous drinkers.</p>
-          <p class="text-gray-800 font-bold">₱4,899.00</p>
-          <button onclick="addToOrder('Bacardi 151')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-md p-4">
-          <img src="./img/drinks/The Bar Pink Gin.webp" alt="Product 6" class="w-50 h-50 rounded-lg mb-4 mx-auto">
-          <h3 class="text-lg font-semibold">The Bar Pink Gin</h3>
-          <p class="text-gray-600">A delightful and refreshing gin with a hint of pink, perfect for any celebration.</p>
-          <p class="text-gray-800 font-bold">₱139.00</p>
-          <button onclick="addToOrder('The Bar Pink Gin')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-md p-4">
-          <img src="./img/drinks/Antonov _Vodka.webp" alt="Product 7" class="w-50 h-50 rounded-lg mb-4 mx-auto">
-          <h3 class="text-lg font-semibold">Antonov Vodka</h3>
-          <p class="text-gray-600">A smooth and versatile vodka, perfect for mixing or enjoying straight.</p>
-          <p class="text-gray-800 font-bold">₱320.00</p>
-          <button onclick="addToOrder('Antonov Vodka')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-        </div>
-      </div>
-    </div>
-
-      <!-- pulotan -->
-      <div class=" category-section flex justify-center mt-5 m-10 mb-20">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-
-          <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/Pulotan/Adob mani with fried garlic.jpg" alt="Product 1" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Adobo Mani with Fried Garlic</h3>
-            <p class="text-gray-600">A savory and crunchy snack made from fried peanuts with garlic, perfect for pairing with drinks.</p>
-            <p class="text-gray-800 font-bold">₱50.00</p>
-             <button onclick="addToOrder('Adobo Mani with Fried Garlic')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/Pulotan/Fried Bangus.jpg" alt="Product 2" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Fried Bangus</h3>
-            <p class="text-gray-600">A crispy and flavorful fried milkfish, perfect as a snack or paired with drinks.</p>
-            <p class="text-gray-800 font-bold">₱270.00</p>
-            <button onclick="addToOrder('Fried Bangus')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-          </div>
-
-            <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/Pulotan/Grilled-Pork-Belly.jpg" alt="Product 3" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Grilled Pork Belly</h3>
-            <p class="text-gray-600">A juicy and flavorful grilled pork belly, perfect for pairing with drinks or as a main dish.</p>
-            <p class="text-gray-800 font-bold">₱215.00</p>
-          <button onclick="addToOrder('Grilled Pork Belly')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/Pulotan/Kapampangan_Sisig.jpg" alt="Product 4" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Kapampangan Sisig</h3>
-            <p class="text-gray-600">A flavorful and crispy Kapampangan delicacy made from pork, perfect for pairing with drinks.</p>
-            <p class="text-gray-800 font-bold">₱480.00</p>
-            <button onclick="addToOrder('Kapampangan Sisig')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/Pulotan/Kinilaw_of_Northern_Mindanao.jpg" alt="Product 5" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Kinilaw of Northern Mindanao</h3>
-            <p class="text-gray-600">A tangy and refreshing Northern Mindanao seafood dish marinated in vinegar and citrus, perfect as an appetizer.</p>
-            <p class="text-gray-800 font-bold">₱320.00</p>
-            <button onclick="addToOrder('Kinilaw of Northern Mindanao')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/Pulotan/lechon kawali.jpg" alt="Product 6" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Lechon Kawali</h3>
-            <p class="text-gray-600">A crispy and savory Filipino pork belly dish, deep-fried to golden perfection, great for pairing with rice or dipping sauces.</p>
-            <p class="text-gray-800 font-bold">₱700.00</p>
-            <button onclick="addToOrder('Lechon Kawali')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/Pulotan/lechon manok.jpg" alt="Product 7" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Lechon Manok</h3>
-            <p class="text-gray-600">A flavorful and juicy Filipino roasted chicken, marinated with spices and grilled to perfection.</p>
-            <p class="text-gray-800 font-bold">₱350.00</p>
-            <button onclick="addToOrder('Lechon Manok')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/Pulotan/Pasayan.jpg" alt="Product 8" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Pasayan</h3>
-            <p class="text-gray-600">Fresh Northern Mindanao shrimp, prized for its sweet and tender flavor, perfect for grilling or cooking in local dishes.</p>
-            <p class="text-gray-800 font-bold">₱650.00</p>
-            <button onclick="addToOrder('Pasayan')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- dessert -->
-      <div class=" category-section flex justify-center mt-5 m-10 mb-20">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-
-          <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/dessert/Buko-Pandan-Jelly.png" alt="Product 1" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Buko Pandan Jelly</h3>
-            <p class="text-gray-600">A refreshing Filipino dessert made with tender coconut strips, vibrant green pandan jelly, and sweet cream perfect for cooling down and vibing any time,</p>
-            <p class="text-gray-800 font-bold">₱120.00</p>
-            <button onclick="addToOrder('Buko Pandan Jelly')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/dessert/cassava-cake-1.webp" alt="Product 2" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Cassava Cake</h3>
-            <p class="text-gray-600">A rich and chewy Filipino favorite made from freshly grated cassava, creamy coconut milk, and sweet condensed milk, baked to golden perfection and topped with a luscious custard layer.</p>
-            <p class="text-gray-800 font-bold">₱50.00</p>
-          <button onclick="addToOrder('Cassava Cake')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/dessert/easy_chocolate_cake_slice.webp" alt="Product 3" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Chocolate Cake Slice </h3>
-            <p class="text-gray-600">A rich, moist slice of chocolate heaven layered with smooth fudge frosting and baked to decadent perfection. Perfect for chocoholics craving that sweet fix.</p>
-            <p class="text-gray-800 font-bold">₱180.00</p>
-          <button onclick="addToOrder('Chocolate Cake Slice')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-          </div>
-
-            <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/dessert/Leche Flan with Cream Cheese.jpg" alt="Product 4" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Leche Flan with Cream Cheese</h3>
-            <p class="text-gray-600">A creamy twist on the classic our Leche Flan with Cream Cheese is ultra smooth, rich, and melt-in-your-mouth, with a luscious caramel top and a subtle cheesecake vibe. A true Filipino dessert glow-up.</p>
-            <p class="text-gray-800 font-bold">₱200.00</p>
-             <button onclick="addToOrder('Leche Flan with Cream Cheese')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/dessert/majablanca.jpg" alt="Product 5" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Maja Blanca</h3>
-            <p class="text-gray-600">Smooth, creamy coconut pudding topped with golden corn and a sprinkle of toasted coconut our Maja Blanca slice is the perfect blend of sweet, soft, and satisfying.</p>
-            <p class="text-gray-800 font-bold">₱120.00</p>
-            <button onclick="addToOrder('Maja Blanca')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/dessert/Mix and Match Halo-Halo.jpg" alt="Product 6" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Mix and Match Halo-Halo</h3>
-            <p class="text-gray-600">Create your own tropical masterpiece with our Mix and Match Halo-Halo! Choose from a variety of colorful toppings like shaved ice, leche flan, ube, fruits, and more. A sweet, refreshing experience in every spoonful you build, you slay!</p>
-            <p class="text-gray-800 font-bold">₱350.00</p>
-           <button onclick="addToOrder('Mix and Match Halo-Halo')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/dessert/polvoron chocolate coated.JPG" alt="Product 7" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Polvoron Chocolate Coated</h3>
-            <p class="text-gray-600">A delightful twist on the classic Filipino treat our Polvoron Chocolate Coated combines the crumbly, buttery goodness of traditional polvoron with a rich, silky chocolate coating. Perfect for those who crave a sweet, melt-in-your-mouth experience!</p>
-            <p class="text-gray-800 font-bold">₱250.00</p>
-           <button onclick="addToOrder('Polvoron Chocolate Coated')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-4">
-            <img src="./img/dessert/Ube Ice Cream Sandwiches.jpg" alt="Product 8" class="w-100 h-50 rounded-lg mb-4 mx-auto">
-            <h3 class="text-lg font-semibold">Ube Ice Cream Sandwiches</h3>
-            <p class="text-gray-600">A fun and flavorful twist on your classic ice cream sandwich soft, pillowy ube-flavored cookies with creamy, vibrant ube ice cream in the middle. The perfect balance of chewy, cold, and sweet for those who live for that purple goodness!</p>
-            <p class="text-gray-800 font-bold">₱90.00</p>
-           <button onclick="addToOrder('Ube Ice Cream Sandwiches')" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg w-30 cursor-pointer float-right hover:bg-[#cf212a]">Buy</button>
-          </div>
-
-        </div>
-      </div>
-
-
-      <!-- popup modal quantiy -->
-      <div id="popupModal" class="fixed inset-0 flex items-center justify-center bg-opacity-50 hidden">
-        <div class="bg-white rounded-lg shadow-lg p-6 w-96">
-          <div class="flex justify-between items-center mb-4">
-            <h3 id="popupProductName" class="text-lg font-semibold"></h3>
-            <button onclick="closePopup()" class="text-gray-500 hover:text-gray-700">&times;</button>
-          </div>
-          <p id="popupProductPrice" class="text-gray-800 font-bold mb-4"></p>
-          <div class="flex items-center space-x-4 mb-4">
-            <button onclick="decreaseQuantity()" class="bg-gray-200 px-3 py-1 rounded-lg">-</button>
-            <span id="quantity" class="text-lg font-semibold">1</span>
-            <button onclick="increaseQuantity()" class="bg-gray-200 px-3 py-1 rounded-lg">+</button>
-          </div>
-          <button onclick="confirmAddToOrder()" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-[#cf212a]">Add to Orders</button>
-        </div>
-      </div>
-
-
-
-    <!-- orders list -->
-      <div id="ordersSection" class="hidden flex justify-center mt-5 m-10 mb-20">
-        <div class="w-full max-w-4xl bg-white rounded-lg shadow-md p-6">
-        <h2 class="text-2xl font-semibold mb-4 text-center">Customers Orders</h2>
-            <div id="ordersList" class="space-y-4 max-h-64 overflow-y-auto">
-            <!-- automatic mo butang diri ang ngipag add to orders -->
-            </div>
-
-          <div class="mt-6">
-            <label for="customerMoney" class="block text-lg font-semibold mb-2">Enter Customer Money:</label>
-            <input type="number" id="customerMoney" class="w-full border border-gray-300 rounded-lg px-4 py-2" placeholder="Enter amount" min="0" step="0.01">
-          </div>
+  <div id="indicators-carousel" class="relative w-full" data-carousel="static">
+    <!-- Carousel wrapper -->
+    <div class="relative overflow-hidden rounded-lg h-[60vh] md:h-[80vh]">
+      <!-- Video Slide -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+        <video class="w-full h-full object-cover" autoplay muted loop controls playsinline>
+            <source src="./video/serbesa.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
           
-        <div id="paymentMethodSection" class="mt-6"></div>
-        <h3 class="text-lg font-semibold mb-4">Payment Method</h3>
-        <div class="flex flex-col space-y-4">
-            <label class="flex items-center space-x-3 ">
-            <input type="radio" name="paymentMethod" value="cash" class="form-radio h-5 w-5 text-blue-500 hover:text-[#cf212a]">
-            <span class="text-gray-800">Cash</span>
-            </label>
-            <label class="flex items-center space-x-3">
-            <input type="radio" name="paymentMethod" value="creditCard" class="form-radio h-5 w-5 text-blue-500 hover:text-[#cf212a]">
-            <span class="text-gray-800">Credit/Debit Card</span>
-            </label>
-            <label class="flex items-center space-x-3">
-            <input type="radio" name="paymentMethod" value="gcash" class="form-radio h-5 w-5 text-blue-500 hover:text-[#cf212a]">
-            <span class="text-gray-800">GCash</span>
-            </label>
-        </div>
+      </div>
+  
+      <!-- Image Slides -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="./img/background/bg1.jpg" class="w-full h-full object-cover" alt="...">
+      </div>
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="./img/background/bg2.jpg" class="w-full h-full object-cover" alt="...">
+      </div>
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="./img/background/bg3.jpg" class="w-full h-full object-cover" alt="...">
+      </div>
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="./img/background/bg4.jpg" class="w-full h-full object-cover" alt="...">
+      </div>
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="./img/background/bg5.jpg" class="w-full h-full object-cover" alt="...">
+      </div>
+    </div>
+  
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+      <button type="button" class="w-3 h-3 rounded-full bg-white/70" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+      <button type="button" class="w-3 h-3 rounded-full bg-white/70" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+      <button type="button" class="w-3 h-3 rounded-full bg-white/70" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+      <button type="button" class="w-3 h-3 rounded-full bg-white/70" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+      <button type="button" class="w-3 h-3 rounded-full bg-white/70" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+    </div>
+  
+    <!-- Slider controls -->
+    <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 hover:bg-white/50 focus:ring-4 focus:ring-white group-focus:outline-none">
+        <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 6 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+        </svg>
+        <span class="sr-only">Previous</span>
+      </span>
+    </button>
+    <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 hover:bg-white/50 focus:ring-4 focus:ring-white group-focus:outline-none">
+        <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 6 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+        </svg>
+        <span class="sr-only">Next</span>
+      </span>
+    </button>
+  </div>
 
-        <div class="mt-6 flex justify-between items-center">
-          <p id="totalPrice" class="text-lg font-bold">Total: ₱0.00</p>
-          <button onclick="checkout()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-[#cf212a]">Checkout</button>
-        </div>
 
+  <section class="py-12 bg-white">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        
+        <!-- Description Left -->
+        <div class="md:w-1/2">
+          <div class="text-center md:text-left">
+            <h2 class="text-2xl font-semibold mb-4">
+              <span style="color: #131313;">Serbe</span><span style="color: #cf212a;">sa</span>
+              <span style="color: #131313;">Bar and Grill</span>
+            </h2>
+            <p class="text-gray-700 text-lg mb-4">
+                Serbesa Bar and Grill in Iligan City is the go-to spot for great drinks, lively crowds, and nonstop fun. With live DJs every night, comfy seating, and a safe, energetic vibe, it’s perfect for chilling or partying with friends. Come for the food, stay for the vibes!
+            </p>
+          </div>
         </div>
+  
+        <!-- Image Right -->
+        <div class="md:w-1/2">
+          <img src="./img/background/serbs.jpg" alt="DJ Mark Glenn"
+               class="w-full h-64 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
         </div>
+  
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section class="py-12 bg-white">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Meet Our DJs</h2>
+      <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <!-- DJ 1 -->
+        <div class="text-center">
+          <img class="mx-auto rounded-lg shadow-md h-48 w-48 object-cover transition-transform duration-300 ease-in-out hover:scale-110" src="./img/dj/dj1.jpg" alt="DJ Aly">
+          <h3 class="mt-4 text-xl font-semibold text-gray-800">DJ Aly</h3>
+        </div>
+        
+        <!-- DJ 2 -->
+        <div class="text-center">
+          <img class="mx-auto rounded-lg shadow-md h-48 w-48 object-cover transition-transform duration-300 ease-in-out hover:scale-110" src="./img/dj/dj6.jpg" alt="DJ Mia">
+          <h3 class="mt-4 text-xl font-semibold text-gray-800">DJ Luigi</h3>
+        </div>
+  
+        <!-- DJ 3 -->
+        <div class="text-center">
+          <img class="mx-auto rounded-lg shadow-md h-48 w-48 object-cover transition-transform duration-300 ease-in-out hover:scale-110" src="./img/dj/dj3.jpg" alt="DJ Ken">
+          <h3 class="mt-4 text-xl font-semibold text-gray-800">DJ Alyanna</h3>
+        </div>
+  
+        <!-- DJ 4 -->
+        <div class="text-center">
+          <img class="mx-auto rounded-lg shadow-md h-48 w-48 object-cover transition-transform duration-300 ease-in-out hover:scale-110" src="./img/dj/dj4.jpg" alt="DJ Mark Glenn">
+          <h3 class="mt-4 text-xl font-semibold text-gray-800">DJ Mark Glenn</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  
+  <section class="py-12 bg-white">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Serbesa People</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div>
+          <img src="./img/people/1.jpg" alt="Gallery Image 1"
+               onclick="openModal(this.src)"
+               class="cursor-pointer w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+        </div>
+        <div>
+          <img src="./img/people/2.jpg" alt="Gallery Image 2"
+               onclick="openModal(this.src)"
+               class="cursor-pointer w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+        </div>
+        <div>
+          <img src="./img/people/3.jpg" alt="Gallery Image 3"
+               onclick="openModal(this.src)"
+               class="cursor-pointer w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+        </div>
+        <div>
+          <img src="./img/people/4.jpg" alt="Gallery Image 4"
+               onclick="openModal(this.src)"
+               class="cursor-pointer w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
+        <div>
+          <img src="./img/people/5.jpg" alt="Gallery Image 5"
+               onclick="openModal(this.src)"
+               class="cursor-pointer w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+        </div>
+        <div>
+          <img src="./img/people/6.jpg" alt="Gallery Image 6"
+               onclick="openModal(this.src)"
+               class="cursor-pointer w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+        </div>
+        <div>
+          <img src="./img/people/7.jpg" alt="Gallery Image 7"
+               onclick="openModal(this.src)"
+               class="cursor-pointer w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+        </div>
+        <div>
+          <img src="./img/people/8.jpg" alt="Gallery Image 8"
+               onclick="openModal(this.src)"
+               class="cursor-pointer w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+        </div>
+      </div>
+      
+  </section>
+  
+  <section class="py-12 bg-white">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Foods & Drinks</h2>
+
+      <div class="mb-8">
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          
+          <!-- Description Left -->
+           
+          <div class="md:w-1/2 text-center md:text-left">
+            <h2 class="text-3xl font-semibold mb-4">
+                Legendary Towers
+            </h2>
+            <ul class="list-disc pl-5 text-gray-700 text-lg space-y-2">
+                <li><strong>🌞 Summerity</strong> – A tropical explosion of flavors, just like a perfect summer day.</li>
+                <li><strong>🍊 Oranggy</strong> – A sweet, citrusy delight with a refreshing kick that’ll have you craving more.</li>
+                <li><strong>🔵 Mystery Blu</strong> – Dive into a cool, vibrant mystery blend that’s as intriguing as it is delicious.</li>
+                <li><strong>🍇 Serbesa Quencher</strong> – A thirst-quenching, mouthwatering creation that hits the spot every time.</li>
+              </ul>
+          </div>
+  
+          <!-- Image Right -->
+          <div class="md:w-1/2">
+            <img src="./img/main_menu/main.jpg" alt="Main Menu"
+                 class="w-full h-auto rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+          </div>
+  
+        </div>
+      </div>
+  
+  
+     <!-- Image Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-5">
+    <img src="./img/main_menu/mystery blue.jpg" alt="Gallery Image 1" onclick="openModal(this.src)"
+         class="cursor-pointer w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+    <img src="./img/main_menu/oranggy.jpg" alt="Gallery Image 2" onclick="openModal(this.src)"
+         class="cursor-pointer w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+    <img src="./img/main_menu/serbesa quencher.jpg" alt="Gallery Image 3" onclick="openModal(this.src)"
+         class="cursor-pointer w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+    <img src="./img/main_menu/summerity.jpg" alt="Gallery Image 4" onclick="openModal(this.src)"
+         class="cursor-pointer w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+  </div>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
+    <img src="./img/main_menu/food1.jpg" alt="Gallery Image 5" onclick="openModal(this.src)"
+         class="cursor-pointer w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+    <img src="./img/main_menu/food.jpg" alt="Gallery Image 6" onclick="openModal(this.src)"
+         class="cursor-pointer w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+    <img src="./img/main_menu/isaw.jpg" alt="Gallery Image 7" onclick="openModal(this.src)"
+         class="cursor-pointer w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+    <img src="./img/main_menu/porkbarbeque.jpg" alt="Gallery Image 8" onclick="openModal(this.src)"
+         class="cursor-pointer w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+  </div>
+  
+  </section>
+  
+  
+<!-- Modal -->
+<div id="imageModal" class="fixed inset-0 z-50 hidden  bg-opacity-80 flex items-center justify-center p-4">
+    <div class="relative w-full max-w-4xl">
+      <!-- Close Button -->
+      <span onclick="closeModal()" class="absolute top-2 right-4 text-white text-3xl font-bold cursor-pointer hover:text-red-400">&times;</span>
+  
+      <!-- Modal Image -->
+      <img id="modalImg"
+           class="w-full max-h-[90vh] rounded-lg shadow-lg object-contain mx-auto">
+    </div>
+  </div>
+  
+
+ 
+
+ 
+  <footer class="bg-white shadow sm:flex sm:items-center sm:justify-between p-4 sm:p-6 xl:p-8  antialiased">
+    <p class="mb-4 text-sm text-center text-gray-500 dark:text-gray-400 sm:mb-0">
+       2025 <a href="index.html" class="hover:underline" target="_blank">Serbesa Bar and Grill</a>. All rights reserved.
+    </p>
+    <div class="flex justify-center items-center space-x-1">
+      <a href="https://www.facebook.com/serbesailigan" data-tooltip-target="tooltip-facebook" class="inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer dark:text-gray-400 dark:hover:text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-600">
+          <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+              <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+          </svg>
+          <span class="sr-only">Facebook</span>
+      </a>
+      <div id="tooltip-facebook" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
+          Like us on Facebook
+          <div class="tooltip-arrow" data-popper-arrow></div>
       </div>
 
 
-      <!-- summary -->
-      <div id="summarySection" class="hidden flex justify-center mt-5 m-10 mb-20">
-        <div class="w-full max-w-4xl bg-white rounded-lg shadow-md p-6">
-          <h2 class="text-2xl font-semibold mb-4 text-center text-gray-800">Order History</h2>
-          <div id="historyList" class="space-y-4 max-h-64 overflow-y-auto border border-gray-300 rounded-lg p-4 bg-gray-50">
-        <!-- History of customers' orders will be dynamically added here -->
-          </div>
-          <div class="mt-6 flex justify-center">
-          </div>
+        <a href="#" data-tooltip-target="tooltip-instagram" class="group p-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.333 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.333 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.333-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.062-1.366.333-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163m0-2.163C8.741 0 8.332.013 7.052.072 5.77.13 4.582.38 3.603 1.358 2.625 2.337 2.375 3.524 2.317 4.806.012 8.332 0 8.741 0 12c0 3.259.013 3.668.072 4.948.058 1.282.308 2.47 1.286 3.449.979.979 2.167 1.229 3.449 1.286 1.28.059 1.689.072 4.948.072s3.668-.013 4.948-.072c1.282-.058 2.47-.308 3.449-1.286.979-.979 1.229-2.167 1.286-3.449.059-1.28.072-1.689.072-4.948s-.013-3.668-.072-4.948c-.058-1.282-.308-2.47-1.286-3.449-.979-.979-2.167-1.229-3.449-1.286C15.668.013 15.259 0 12 0z"/>
+            <path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998z"/>
+            <circle cx="18.406" cy="5.594" r="1.44"/>
+            </svg>
+            <span class="sr-only">Instagram</span>
+        </a>
+        <div id="tooltip-instagram" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
+            Follow us on Instagram
+            <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
-      </div>
+  
+     
+  </div>
+  </footer>
+
+  
+
+  
+  
 
 
-      <script src="script.js"></script>
-
-  </body>
+  
+  <script>
+    function openModal(src) {
+      document.getElementById('modalImg').src = src;
+      document.getElementById('imageModal').classList.remove('hidden');
+    }
+  
+    function closeModal() {
+      document.getElementById('imageModal').classList.add('hidden');
+    }
+  
+    // Optional: Close modal on ESC key
+    window.addEventListener('keydown', function (e) {
+      if (e.key === "Escape") closeModal();
+    });
+  </script>
+  
+</body>
 </html>
