@@ -1,4 +1,4 @@
-# Serbesa Bar and Grill POS System
+# Serbesa Bar and Grill Kiosk System
 
 ## 📍 About Serbesa Bar and Grill
 
