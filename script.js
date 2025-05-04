@@ -1,4 +1,6 @@
 const orders = [];
+let quantity = 1;
+let selectedProduct = null;
 
 const productPrices = [
   { name: "Tanduay Select", price: 150.00 },
@@ -26,9 +28,6 @@ const productPrices = [
   { name: "Polvoron Chocolate Coated", price: 250.00 },
   { name: "Ube Ice Cream Sandwiches", price: 90.00 }
 ];
-
-let selectedProduct = {};
-let quantity = 1;
 
 function openPopup(productName, productPrice) {
   selectedProduct = { name: productName, price: productPrice };
@@ -60,17 +59,15 @@ function confirmAddToOrder() {
     orders.push(selectedProduct);
   }
   alert(`${selectedProduct.name} (x${quantity}) added to Orders`);
-  console.log("Current Orders:", orders);
   renderOrders();
   closePopup();
 }
 
 function renderOrders() {
   const ordersList = document.getElementById('ordersList');
-  ordersList.innerHTML = ''; // Clear the current list
+  ordersList.innerHTML = '';
   const orderSummary = {};
 
-  // Summarize orders by product name
   orders.forEach(order => {
     if (orderSummary[order.name]) {
       orderSummary[order.name].quantity++;
@@ -81,18 +78,21 @@ function renderOrders() {
 
   let total = 0;
 
-  // Render summarized orders
-  Object.keys(orderSummary).forEach((productName) => {
+  Object.keys(orderSummary).forEach(productName => {
     const { price, quantity } = orderSummary[productName];
     const orderItem = document.createElement('div');
     orderItem.className = 'flex justify-between items-center border-b pb-2 mb-2';
     orderItem.innerHTML = `
-      <span>${productName} (x${quantity})</span>
-      <span>₱${(price * quantity).toFixed(2)}</span>
-      <div class="flex items-center space-x-2">
-        <button onclick="decreaseOrderQuantity('${productName}')" class="bg-gray-200 px-2 py-1 rounded-lg">-</button>
-        <button onclick="increaseOrderQuantity('${productName}')" class="bg-gray-200 px-2 py-1 rounded-lg">+</button>
-        <button onclick="removeOrder('${productName}')" class="text-red-500 hover:underline">Remove</button>
+      <div class="flex justify-between w-full items-center">
+        <span>${productName} (x${quantity})</span>
+        <div class="flex space-x-2">
+          <button onclick="decreaseOrderQuantity('${productName}')" class="bg-gray-200 px-2 py-1 rounded-lg">-</button>
+          <button onclick="increaseOrderQuantity('${productName}')" class="bg-gray-200 px-2 py-1 rounded-lg">+</button>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span>₱${(price * quantity).toFixed(2)}</span>
+          <button onclick="removeOrder('${productName}')" class="text-red-500 hover:underline">Remove</button>
+        </div>
       </div>
     `;
     ordersList.appendChild(orderItem);
@@ -101,6 +101,7 @@ function renderOrders() {
 
   document.getElementById('totalPrice').textContent = `Total: ₱${total.toFixed(2)}`;
 }
+
 
 function decreaseOrderQuantity(productName) {
   const orderIndex = orders.findIndex(order => order.name === productName);
@@ -118,9 +119,22 @@ function increaseOrderQuantity(productName) {
   }
 }
 
+function removeOrder(productName) {
+  // Remove all items matching that name
+  for (let i = orders.length - 1; i >= 0; i--) {
+    if (orders[i].name === productName) {
+      orders.splice(i, 1);
+    }
+  }
+  renderOrders();
+}
 
-//function of checkout nga handle ang payment method and customer money then popup ang order summary
 function checkout() {
+  if (orders.length === 0) {
+    alert("You must select at least one item or product before you can checkout.");
+    return;
+  }
+
   const customerMoney = parseFloat(document.getElementById('customerMoney').value);
   const total = orders.reduce((sum, order) => sum + order.price, 0);
   const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
@@ -142,7 +156,6 @@ function checkout() {
 
   const change = customerMoney - total;
 
-  // Generate order summary
   const orderSummary = orders.reduce((summary, order) => {
     if (summary[order.name]) {
       summary[order.name].quantity++;
@@ -152,7 +165,7 @@ function checkout() {
     return summary;
   }, {});
 
-  let orderDetails = "";  
+  let orderDetails = "";
   Object.keys(orderSummary).forEach(productName => {
     const { price, quantity } = orderSummary[productName];
     orderDetails += `${productName} (x${quantity}) - ₱${(price * quantity).toFixed(2)}\n`;
@@ -160,7 +173,6 @@ function checkout() {
 
   alert(`Payment Method: ${paymentMethod.value}\n${orderDetails}Total: ₱${total.toFixed(2)}\nChange: ₱${change.toFixed(2)}`);
 
-  // Rest of the function remains the same (diri na mag popup ang order summary customer history na ngipag palit)
   const historyList = document.getElementById('historyList');
   const historyItem = document.createElement('div');
   historyItem.className = 'border-b pb-2 mb-2';
@@ -177,13 +189,6 @@ function checkout() {
   document.getElementById('customerMoney').value = '';
 }
 
-
-
-function removeOrder(index) {
-  orders.splice(index, 1);
-  renderOrders();
-}
-
 function addToOrder(productName) {
   const product = productPrices.find(item => item.name === productName);
   if (product) {
@@ -193,54 +198,42 @@ function addToOrder(productName) {
   }
 }
 
-
-
-// Function to handle category selection and show/hide sections accordingly(navigation bar click ni siya )
 function handleClick(category) {
-    const sections = document.querySelectorAll('.category-section');
-    const ordersSection = document.getElementById('ordersSection');
-    const summarySection = document.getElementById('summarySection');
-    const filterDiv = document.querySelector('.flex.justify-center.space-x-4');
+  const sections = document.querySelectorAll('.category-section');
+  const ordersSection = document.getElementById('ordersSection');
+  const summarySection = document.getElementById('summarySection');
+  const filterDiv = document.querySelector('.flex.justify-center.space-x-4');
 
-    sections.forEach(section => {
-        section.style.display = 'none';
-    });
+  sections.forEach(section => section.style.display = 'none');
 
-    if (category === 'Orders') {
-        ordersSection.classList.remove('hidden');
-        if (filterDiv) filterDiv.style.display = 'none';
-        if (summarySection) summarySection.classList.add('hidden');
-    } else if (category === 'Summary') {
-        if (summarySection) summarySection.classList.remove('hidden');
-        ordersSection.classList.add('hidden');
-        if (filterDiv) filterDiv.style.display = 'none';
-    } else {
-        ordersSection.classList.add('hidden');
-        if (summarySection) summarySection.classList.add('hidden');
-        if (category === 'All' || category === 'Menu') {
-            sections.forEach(section => {
-                section.style.display = 'flex';
-            });
-            if (filterDiv) filterDiv.style.display = 'flex';
-        } else {
-            const indexMap = {
-                'Drinks': 0,
-                'Meals': 1,
-                'Pulotan': 1,
-                'Dessert': 2
-            };
-            const idx = indexMap[category];
-            if (typeof idx !== 'undefined') {
-                sections[idx].style.display = 'flex';
-            }
-            if (filterDiv) filterDiv.style.display = 'flex';
-        }
+  if (category === 'Orders') {
+    ordersSection.classList.remove('hidden');
+    if (filterDiv) filterDiv.style.display = 'none';
+    if (summarySection) summarySection.classList.add('hidden');
+  } else if (category === 'Summary') {
+    if (summarySection) summarySection.classList.remove('hidden');
+    ordersSection.classList.add('hidden');
+    if (filterDiv) filterDiv.style.display = 'none';
+  } else {
+    ordersSection.classList.add('hidden');
+    if (summarySection) summarySection.classList.add('hidden');
+
+    const indexMap = {
+      'Drinks': 0,
+      'Pulotan': 1,
+      'Dessert': 2
+    };
+    const idx = indexMap[category];
+    if (typeof idx !== 'undefined') {
+      sections[idx].style.display = 'flex';
     }
 
-    console.log(`Category selected: ${category}`);
+    if (filterDiv) filterDiv.style.display = 'flex';
+  }
+
+  console.log(`Category selected: ${category}`);
 }
 
-
 window.addEventListener('DOMContentLoaded', () => {
-  handleClick('All');
+  handleClick('Drinks');
 });
