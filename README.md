@@ -140,6 +140,8 @@ function removeOrder(productName) {
     // Removes all instances of the product from orders
 }
 
+```
+
 ### Features
 - Real-time order updates: As the user selects products and adjusts quantities, the order summary updates in real time.
 
