@@ -245,9 +245,6 @@ function handleClick(category) {
   console.log(`Category selected: ${category}`);
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  handleClick('Drinks');
-});
 
 
 // qrcode g cash display when i click niya ang gcash button 
